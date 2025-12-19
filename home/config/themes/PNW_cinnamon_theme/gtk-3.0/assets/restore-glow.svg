@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Enhanced glow filter for hover state -->
+    <filter id="glow" x="-100%" y="-100%" width="300%" height="300%">
+      <!-- Outer glow layer -->
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur1"/>
+      <feColorMatrix in="blur1" type="matrix"
+        values="1 0 0 0 0.1
+                0 1 0 0 0.05
+                0 0 1 0 0
+                0 0 0 1 0" result="coloredBlur1"/>
+      <!-- Inner glow layer -->
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur1"/>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <g id="restore-button-glow">
+    <!-- Outer glow circle for additional effect -->
+    <circle cx="12" cy="12" r="10" fill="none" stroke="#d4977d" stroke-width="0.5" opacity="0.3"/>
+    <!-- Two overlapping windows symbol for restore/unmaximize with enhanced glow -->
+    <rect x="8" y="5" width="9" height="9"
+          stroke="#e8b299"
+          stroke-width="2"
+          fill="none"
+          stroke-linejoin="round"
+          filter="url(#glow)"/>
+    <rect x="7" y="10" width="9" height="9"
+          stroke="#e8b299"
+          stroke-width="2"
+          fill="none"
+          stroke-linejoin="round"
+          filter="url(#glow)"/>
+  </g>
+</svg>

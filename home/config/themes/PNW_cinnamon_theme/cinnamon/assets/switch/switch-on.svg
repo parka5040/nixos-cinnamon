@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48" height="24" viewBox="0 0 48 24" xmlns="http://www.w3.org/2000/svg">
+  <g id="toggle-on">
+    <!-- Toggle track - highlighted for on state -->
+    <rect x="1" y="1" width="46" height="22" rx="11" ry="11"
+          fill="#505d6d"
+          stroke="#505d6d"
+          stroke-width="1"/>
+    <!-- Toggle thumb/handle - right position for on state -->
+    <circle cx="36" cy="12" r="8"
+            fill="#c5d0d9"
+            stroke="#505d6d"
+            stroke-width="1"/>
+  </g>
+</svg>

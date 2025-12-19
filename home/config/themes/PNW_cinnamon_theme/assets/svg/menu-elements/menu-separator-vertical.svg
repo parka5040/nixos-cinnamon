@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="2" height="100" viewBox="0 0 2 100" xmlns="http://www.w3.org/2000/svg">
+  <g id="menu-separator-vertical">
+    <!-- Vertical separator line for menus/panels -->
+    <line x1="1" y1="0" x2="1" y2="100"
+          stroke="#65737e"
+          stroke-width="1"
+          stroke-linecap="butt"/>
+  </g>
+</svg>

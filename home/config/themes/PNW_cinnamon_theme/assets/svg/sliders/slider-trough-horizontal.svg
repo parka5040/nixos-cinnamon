@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100" height="8" viewBox="0 0 100 8" xmlns="http://www.w3.org/2000/svg">
+  <g id="slider-trough-horizontal">
+    <!-- Horizontal slider trough/track -->
+    <rect x="0" y="2" width="100" height="4" rx="2"
+          fill="#2b3339"
+          stroke="#3d4d5c"
+          stroke-width="1"/>
+  </g>
+</svg>

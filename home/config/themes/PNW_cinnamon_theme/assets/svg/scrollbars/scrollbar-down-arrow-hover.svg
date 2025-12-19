@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+  <g id="scrollbar-down-arrow-hover">
+    <!-- Down arrow for vertical scrollbar (hover state) -->
+    <path d="M 4,6 L 8,10 L 12,6"
+          stroke="#eff1f3"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          fill="none"/>
+  </g>
+</svg>

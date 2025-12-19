@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+  <g id="expander-collapsed-insensitive">
+    <!-- Right-pointing triangle for collapsed/unexpanded state (disabled) -->
+    <path d="M 6,4 L 11,8 L 6,12 Z"
+          fill="#65737e"
+          stroke="none"/>
+  </g>
+</svg>

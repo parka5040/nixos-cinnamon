@@ -1,0 +1,731 @@
+/* Color Palette — Mountain Twilight */
+
+:root {
+    /* Stone & Granite — Primary backgrounds */
+    --pnw-stone-deep: #18191a;
+    --pnw-stone-dark: #1e2022;
+    --pnw-stone-mid: #26282b;
+    --pnw-stone-light: #2e3134;
+
+    /* Mist & Fog — Atmospheric tones */
+    --pnw-mist-dark: #3a3d40;
+    --pnw-mist-mid: #4d5154;
+    --pnw-mist-light: #5f6467;
+    --pnw-fog: #70767a;
+
+    /* Deep Forest — Accent & secondary */
+    --pnw-forest-deep: #1f2a25;
+    --pnw-forest-mid: #2a3832;
+    --pnw-forest-accent: #354840;
+    --pnw-moss: #3d4f46;
+
+    /* Fading Light — Text colors */
+    --pnw-text-primary: #c9cbcc;
+    --pnw-text-secondary: #969a9c;
+    --pnw-text-muted: #6b7073;
+
+    /* Sunset Glow — Very subtle warm accents */
+    --pnw-sunset-deep: #5c4035;
+    --pnw-sunset-glow: #6d4d3d;
+    --pnw-sunset-ember: #7a5544;
+    --pnw-sunset-soft: #8b6350;
+
+    /* Twilight Sky — Cool accent */
+    --pnw-twilight: #2d3540;
+
+    /* Functional */
+    --pnw-shadow: rgba(0, 0, 0, 0.55);
+    --pnw-border: rgba(70, 75, 80, 0.35);
+    --pnw-glow: rgba(139, 99, 80, 0.15);
+}
+
+/* Main Browser Window & Background */
+
+/* Root window background */
+#main-window,
+#browser,
+#navigator-toolbox {
+background-color: var(--pnw-stone-deep) !important;
+}
+
+/* Remove default separators */
+#navigator-toolbox::after {
+display: none !important;
+}
+
+/* Tab Bar */
+
+/* Tab bar container */
+#titlebar,
+#TabsToolbar {
+background: linear-gradient(
+    180deg,
+    var(--pnw-stone-deep) 0%,
+                            var(--pnw-stone-dark) 100%
+) !important;
+border-bottom: 1px solid var(--pnw-border) !important;
+}
+
+/* Remove gap at top when maximized */
+:root[sizemode="maximized"] #TabsToolbar {
+    padding-top: 0 !important;
+}
+
+:root[sizemode="maximized"] #titlebar {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+:root[sizemode="maximized"] .titlebar-spacer {
+    display: none !important;
+}
+
+:root[sizemode="maximized"] .tabbrowser-tab {
+    margin-top: 0 !important;
+    padding-top: 8px !important;
+}
+
+:root[sizemode="maximized"] .tab-background {
+    border-radius: 0 !important;
+    margin-top: 0 !important;
+}
+
+:root[sizemode="maximized"] .tabbrowser-tab[selected="true"] .tab-background {
+    border-radius: 0 !important;
+}
+
+:root[sizemode="maximized"] #TabsToolbar-customization-target {
+    padding-top: 0 !important;
+}
+
+:root[sizemode="maximized"] #tabbrowser-tabs {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+/* Individual tabs */
+.tabbrowser-tab {
+    background: transparent !important;
+    border-radius: 6px 6px 0 0 !important;
+    margin: 4px 1px 0 1px !important;
+    padding: 0 !important;
+    min-height: 34px !important;
+    transition: all 0.2s ease !important;
+}
+
+/* Tab background styling */
+.tab-background {
+    background: var(--pnw-stone-mid) !important;
+    border-radius: 6px 6px 0 0 !important;
+    border: 1px solid transparent !important;
+    border-bottom: none !important;
+    margin-block: 0 !important;
+    opacity: 0.6 !important;
+    transition: all 0.25s ease !important;
+}
+
+/* Hovered tab — mist */
+.tabbrowser-tab:hover .tab-background {
+    background: var(--pnw-mist-dark) !important;
+    opacity: 0.85 !important;
+    border-color: var(--pnw-border) !important;
+}
+
+/* Selected/Active tab — forest accent */
+.tabbrowser-tab[selected="true"] .tab-background {
+    background: linear-gradient(
+        180deg,
+        var(--pnw-forest-mid) 0%,
+                                var(--pnw-stone-mid) 100%
+    ) !important;
+    opacity: 1 !important;
+    border-color: var(--pnw-mist-mid) !important;
+    box-shadow:
+    0 -1px 4px var(--pnw-shadow),
+    inset 0 1px 0 rgba(139, 99, 80, 0.08) !important; /* Subtle sunset top edge */
+}
+
+/* Tab text */
+.tab-text {
+    color: var(--pnw-text-secondary) !important;
+    font-weight: 400 !important;
+    text-shadow: 0 1px 2px var(--pnw-shadow) !important;
+    transition: color 0.2s ease !important;
+}
+
+.tabbrowser-tab:hover .tab-text {
+    color: var(--pnw-text-primary) !important;
+}
+
+.tabbrowser-tab[selected="true"] .tab-text {
+    color: var(--pnw-text-primary) !important;
+    font-weight: 500 !important;
+}
+
+/* Tab close button */
+.tab-close-button {
+    opacity: 0.5 !important;
+    fill: var(--pnw-text-muted) !important;
+    transition: all 0.2s ease !important;
+    border-radius: 4px !important;
+}
+
+.tab-close-button:hover {
+    opacity: 1 !important;
+    fill: var(--pnw-sunset-soft) !important;
+    background: var(--pnw-sunset-deep) !important;
+}
+
+/* Tab favicon */
+.tab-icon-image {
+    opacity: 0.85 !important;
+}
+
+.tabbrowser-tab[selected="true"] .tab-icon-image {
+    opacity: 1 !important;
+}
+
+/* New tab button */
+#tabs-newtab-button,
+#new-tab-button {
+fill: var(--pnw-text-muted) !important;
+opacity: 0.7 !important;
+transition: all 0.2s ease !important;
+border-radius: 6px !important;
+padding: 4px !important;
+}
+
+#tabs-newtab-button:hover,
+#new-tab-button:hover {
+fill: var(--pnw-sunset-soft) !important;
+background: var(--pnw-sunset-deep) !important;
+opacity: 1 !important;
+}
+
+/* Tab line (top indicator on selected tab) */
+.tab-line {
+    background: var(--pnw-sunset-ember) !important;
+    opacity: 0.6 !important;
+    height: 2px !important;
+}
+
+/* Navigation Bar */
+
+#nav-bar {
+background: linear-gradient(
+    180deg,
+    var(--pnw-stone-dark) 0%,
+                            var(--pnw-stone-mid) 100%
+) !important;
+border-bottom: 1px solid var(--pnw-border) !important;
+padding: 4px 8px !important;
+box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.02) !important;
+}
+
+/* URL Bar */
+#urlbar {
+background: var(--pnw-stone-deep) !important;
+border: 1px solid var(--pnw-mist-dark) !important;
+border-radius: 8px !important;
+transition: all 0.25s ease !important;
+box-shadow: inset 0 1px 3px var(--pnw-shadow) !important;
+min-height: 38px !important;
+}
+
+#urlbar-container {
+min-width: 50vw !important;
+}
+
+#urlbar-input {
+padding-block: 4px !important;
+}
+
+#urlbar:hover {
+border-color: var(--pnw-mist-mid) !important;
+background: var(--pnw-stone-dark) !important;
+}
+
+#urlbar[focused="true"] {
+border-color: var(--pnw-forest-accent) !important;
+background: var(--pnw-stone-dark) !important;
+box-shadow:
+inset 0 1px 3px var(--pnw-shadow),
+0 0 0 1px rgba(53, 72, 64, 0.3),
+0 0 8px var(--pnw-glow) !important;
+}
+
+/* URL bar background when expanded */
+#urlbar-background {
+background: transparent !important;
+border: none !important;
+box-shadow: none !important;
+}
+
+/* URL bar input text */
+#urlbar-input {
+color: var(--pnw-text-primary) !important;
+font-size: 16px !important;
+}
+
+/* URL bar results/suggestions text */
+.urlbarView-title,
+.urlbarView-url,
+.urlbarView-title-separator {
+    font-size: 14px !important;
+}
+
+#urlbar-input::placeholder {
+color: var(--pnw-text-muted) !important;
+opacity: 0.8 !important;
+}
+
+/* URL bar icons */
+#identity-box,
+#tracking-protection-icon-container,
+#page-action-buttons {
+fill: var(--pnw-text-muted) !important;
+opacity: 0.7 !important;
+}
+
+#identity-box:hover,
+#tracking-protection-icon-container:hover {
+fill: var(--pnw-text-secondary) !important;
+opacity: 1 !important;
+}
+
+/* Security indicator */
+#identity-icon {
+fill: var(--pnw-fog) !important;
+}
+
+.identity-box-button:hover {
+    background: var(--pnw-mist-dark) !important;
+    border-radius: 4px !important;
+}
+
+/* Toolbar Buttons */
+
+/* All toolbar buttons */
+toolbarbutton,
+.toolbarbutton-1 {
+    fill: var(--pnw-text-secondary) !important;
+    opacity: 0.8 !important;
+    transition: all 0.2s ease !important;
+    border-radius: 6px !important;
+}
+
+/* Remove inner icon backgrounds that cause double-highlight */
+.toolbarbutton-1 .toolbarbutton-icon,
+.toolbarbutton-1 > .toolbarbutton-badge-stack {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+toolbarbutton:hover,
+.toolbarbutton-1:hover {
+    fill: var(--pnw-text-primary) !important;
+    background: var(--pnw-mist-dark) !important;
+    opacity: 1 !important;
+}
+
+/* Ensure inner elements don't add their own hover background */
+.toolbarbutton-1:hover .toolbarbutton-icon,
+.toolbarbutton-1:hover > .toolbarbutton-badge-stack {
+    background: transparent !important;
+}
+
+toolbarbutton:active,
+.toolbarbutton-1:active,
+toolbarbutton[open="true"] {
+    background: var(--pnw-forest-deep) !important;
+}
+
+/* Back/Forward buttons */
+#back-button,
+#forward-button,
+#home-button {
+fill: var(--pnw-text-secondary) !important;
+}
+
+#back-button > .toolbarbutton-icon,
+#forward-button > .toolbarbutton-icon,
+#home-button > .toolbarbutton-icon {
+background: transparent !important;
+}
+
+#back-button:hover,
+#forward-button:hover,
+#home-button:hover {
+fill: var(--pnw-sunset-soft) !important;
+background: var(--pnw-mist-dark) !important;
+}
+
+#back-button:hover > .toolbarbutton-icon,
+#forward-button:hover > .toolbarbutton-icon,
+#home-button:hover > .toolbarbutton-icon {
+background: transparent !important;
+}
+
+/* Disabled state */
+#back-button[disabled="true"],
+#forward-button[disabled="true"] {
+opacity: 0.3 !important;
+}
+
+/* Reload button */
+#reload-button:hover {
+fill: var(--pnw-sunset-soft) !important;
+}
+
+/* Downloads button with indicator */
+#downloads-button[attention="success"] .toolbarbutton-icon {
+fill: var(--pnw-sunset-ember) !important;
+}
+
+/* Bookmarks Bar */
+
+#PersonalToolbar {
+background: var(--pnw-stone-mid) !important;
+border-bottom: 1px solid var(--pnw-border) !important;
+padding: 4px 8px !important;
+}
+
+/* Bookmark items */
+#PlacesToolbarItems toolbarbutton {
+color: var(--pnw-text-secondary) !important;
+border-radius: 4px !important;
+padding: 4px 8px !important;
+transition: all 0.2s ease !important;
+}
+
+#PlacesToolbarItems toolbarbutton:hover {
+background: var(--pnw-mist-dark) !important;
+color: var(--pnw-text-primary) !important;
+}
+
+/* Bookmark folders */
+.bookmark-item[container="true"] {
+    fill: var(--pnw-fog) !important;
+}
+
+/* Dropdown Menus & Panels */
+
+/* Main menu panels */
+menupopup,
+panel,
+#appMenu-popup,
+#widget-overflow,
+#customizationui-widget-panel,
+.panel-arrowcontent {
+    background: var(--pnw-stone-dark) !important;
+    border: 1px solid var(--pnw-mist-dark) !important;
+    border-radius: 8px !important;
+    box-shadow: 0 8px 24px var(--pnw-shadow) !important;
+    color: var(--pnw-text-primary) !important;
+}
+
+/* Panel arrow */
+.panel-arrow {
+    fill: var(--pnw-stone-dark) !important;
+    stroke: var(--pnw-mist-dark) !important;
+}
+
+/* Menu items */
+menuitem,
+menu {
+    color: var(--pnw-text-primary) !important;
+    border-radius: 4px !important;
+    margin: 2px 4px !important;
+    padding: 6px 8px !important;
+    transition: background 0.15s ease !important;
+}
+
+menuitem:hover,
+menu:hover,
+menuitem[_moz-menuactive="true"],
+menu[_moz-menuactive="true"] {
+    background: var(--pnw-mist-dark) !important;
+    color: var(--pnw-text-primary) !important;
+}
+
+/* Menu separator */
+menuseparator {
+    border-color: var(--pnw-border) !important;
+    margin: 4px 8px !important;
+}
+
+/* Panel subviews */
+.panel-subview-body {
+    background: var(--pnw-stone-dark) !important;
+    color: var(--pnw-text-primary) !important;
+}
+
+.subviewbutton {
+    color: var(--pnw-text-primary) !important;
+    border-radius: 4px !important;
+    transition: background 0.15s ease !important;
+}
+
+.subviewbutton:hover {
+    background: var(--pnw-mist-dark) !important;
+}
+
+/* Autocomplete & Suggestions */
+
+#urlbar-results {
+background: var(--pnw-stone-dark) !important;
+border: 1px solid var(--pnw-mist-dark) !important;
+border-radius: 8px !important;
+box-shadow: 0 8px 24px var(--pnw-shadow) !important;
+padding: 4px !important;
+}
+
+.urlbarView-row {
+    border-radius: 6px !important;
+    padding: 8px !important;
+    margin: 2px !important;
+    transition: background 0.15s ease !important;
+}
+
+.urlbarView-row:hover,
+.urlbarView-row[selected="true"] {
+    background: var(--pnw-mist-dark) !important;
+}
+
+.urlbarView-row[selected="true"] {
+    border-left: 2px solid var(--pnw-forest-accent) !important;
+}
+
+.urlbarView-title {
+    color: var(--pnw-text-primary) !important;
+}
+
+.urlbarView-url {
+    color: var(--pnw-fog) !important;
+}
+
+.urlbarView-favicon {
+    opacity: 0.85 !important;
+}
+
+/* Find Bar */
+
+findbar {
+    background: var(--pnw-stone-mid) !important;
+    border-top: 1px solid var(--pnw-border) !important;
+    color: var(--pnw-text-primary) !important;
+}
+
+.findbar-textbox {
+    background: var(--pnw-stone-deep) !important;
+    border: 1px solid var(--pnw-mist-dark) !important;
+    border-radius: 6px !important;
+    color: var(--pnw-text-primary) !important;
+    transition: border-color 0.2s ease !important;
+}
+
+.findbar-textbox:focus {
+    border-color: var(--pnw-forest-accent) !important;
+    box-shadow: 0 0 0 1px rgba(53, 72, 64, 0.3) !important;
+}
+
+.findbar-find-status {
+    color: var(--pnw-text-muted) !important;
+}
+
+/* Highlight when text found */
+.findbar-textbox[status="notfound"] {
+    background: var(--pnw-sunset-deep) !important;
+    border-color: var(--pnw-sunset-ember) !important;
+}
+
+/* Sidebar */
+
+#sidebar-box {
+background: var(--pnw-stone-dark) !important;
+border-right: 1px solid var(--pnw-border) !important;
+}
+
+#sidebar-header {
+background: var(--pnw-stone-mid) !important;
+border-bottom: 1px solid var(--pnw-border) !important;
+color: var(--pnw-text-primary) !important;
+}
+
+#sidebar {
+background: var(--pnw-stone-dark) !important;
+color: var(--pnw-text-primary) !important;
+}
+
+/* Scrollbars */
+
+/* Thin scrollbars */
+* {
+    scrollbar-width: thin !important;
+    scrollbar-color: var(--pnw-mist-mid) var(--pnw-stone-deep) !important;
+}
+
+/* Webkit scrollbars (for internal pages) */
+::-webkit-scrollbar {
+    width: 10px !important;
+    height: 10px !important;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--pnw-stone-deep) !important;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--pnw-mist-mid) !important;
+    border-radius: 5px !important;
+    border: 2px solid var(--pnw-stone-deep) !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--pnw-mist-light) !important;
+}
+
+/* Status Bar & Notifications */
+
+/* Notification bar */
+notification-message {
+    background: var(--pnw-stone-mid) !important;
+    border: 1px solid var(--pnw-mist-dark) !important;
+    color: var(--pnw-text-primary) !important;
+}
+
+/* Private Window */
+
+:root[privatebrowsingmode="temporary"] #main-window,
+:root[privatebrowsingmode="temporary"] #navigator-toolbox,
+:root[privatebrowsingmode="temporary"] #TabsToolbar {
+    background: linear-gradient(
+        180deg,
+        #121314 0%,
+        #18191a 100%
+    ) !important;
+}
+
+:root[privatebrowsingmode="temporary"] .tab-background[selected="true"] {
+    background: linear-gradient(
+        180deg,
+        var(--pnw-twilight) 0%,
+                                #1a1c1e 100%
+    ) !important;
+}
+
+/* Private browsing indicator */
+#private-browsing-indicator-with-label {
+background: var(--pnw-twilight) !important;
+border-radius: 4px !important;
+padding: 2px 8px !important;
+color: var(--pnw-text-muted) !important;
+}
+
+/* Container Tabs — Different Paths */
+
+.tabbrowser-tab[usercontextid] .tab-context-line {
+    height: 2px !important;
+    margin-bottom: -1px !important;
+    opacity: 0.7 !important;
+}
+
+/* Loading Indicator — Fireflies at Dusk */
+
+.tab-throbber,
+.tab-throbber-tabslist {
+    opacity: 0.8 !important;
+}
+
+/* Progress meter on URL bar */
+#urlbar-input-container::after {
+background: linear-gradient(
+    90deg,
+    var(--pnw-sunset-deep) 0%,
+                            var(--pnw-sunset-ember) 50%,
+                            var(--pnw-sunset-deep) 100%
+) !important;
+}
+
+/* Selection and Focus States */
+
+::selection {
+    background: var(--pnw-sunset-deep) !important;
+    color: var(--pnw-text-primary) !important;
+}
+
+::-moz-selection {
+    background: var(--pnw-sunset-deep) !important;
+    color: var(--pnw-text-primary) !important;
+}
+
+/* Focus outline */
+*:focus-visible {
+    outline: 2px solid var(--pnw-sunset-ember) !important;
+    outline-offset: 2px !important;
+}
+
+/* Tooltip */
+
+tooltip {
+    background: var(--pnw-stone-deep) !important;
+    border: 1px solid var(--pnw-mist-dark) !important;
+    border-radius: 6px !important;
+    color: var(--pnw-text-primary) !important;
+    padding: 6px 10px !important;
+    box-shadow: 0 4px 12px var(--pnw-shadow) !important;
+}
+
+/* Pinned Tabs */
+
+.tabbrowser-tab[pinned] {
+    min-width: 40px !important;
+}
+
+.tabbrowser-tab[pinned] .tab-background {
+    border-radius: 6px !important;
+}
+
+.tabbrowser-tab[pinned][selected="true"] .tab-background {
+    box-shadow:
+    0 0 8px var(--pnw-shadow),
+    inset 0 0 0 1px rgba(139, 99, 80, 0.1) !important;
+}
+
+/* Tab Audio Indicator */
+
+.tab-icon-sound {
+    fill: var(--pnw-sunset-soft) !important;
+    opacity: 0.8 !important;
+}
+
+.tab-icon-sound:hover {
+    opacity: 1 !important;
+    background: var(--pnw-sunset-deep) !important;
+    border-radius: 50% !important;
+}
+
+/* Extension Button Panel */
+
+#unified-extensions-panel {
+background: var(--pnw-stone-dark) !important;
+border: 1px solid var(--pnw-mist-dark) !important;
+}
+
+.unified-extensions-item {
+    border-radius: 6px !important;
+    margin: 2px 4px !important;
+    transition: background 0.15s ease !important;
+}
+
+.unified-extensions-item:hover {
+    background: var(--pnw-mist-dark) !important;
+}
+
+/* Autoscroll Indicator */
+
+#autoscroller {
+background: transparent !important;
+border: none !important;
+box-shadow: none !important;
+}

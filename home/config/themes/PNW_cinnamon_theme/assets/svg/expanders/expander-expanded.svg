@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+  <g id="expander-expanded">
+    <!-- Down-pointing triangle for expanded state -->
+    <path d="M 4,6 L 8,11 L 12,6 Z"
+          fill="#c5d0d9"
+          stroke="none"/>
+  </g>
+</svg>

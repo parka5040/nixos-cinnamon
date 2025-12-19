@@ -1,0 +1,290 @@
+/* Nemo Sidebar */
+
+.nemo-window .sidebar,
+.nemo-window .sidebar .view,
+.nemo-window paned .sidebar-placeholder,
+.nemo-window placessidebar,
+.nemo-window placessidebar .view,
+.nemo-window placessidebar list,
+.nemo-window placessidebar row {
+    background-color: shade(@theme_bg_color, 0.95);
+    color: @theme_fg_color;
+    text-shadow: none;
+    -gtk-icon-shadow: none;
+    border: none;
+}
+
+placessidebar,
+placessidebar list,
+placessidebar row,
+placessidebar .sidebar-row {
+    background-color: shade(@theme_bg_color, 0.95);
+    border: none;
+    outline: none;
+}
+
+placessidebar list separator {
+    min-height: 1px;
+    margin: 4px 8px;
+    background-color: alpha(@borders, 0.5);
+    border: none;
+}
+
+.nemo-window .sidebar .view:selected,
+.nemo-window .sidebar row:selected {
+    background-color: @forest_green;
+    color: @theme_selected_fg_color;
+    text-shadow: none;
+    -gtk-icon-shadow: none;
+}
+
+.nemo-window .sidebar .expander:selected {
+    border-color: @theme_selected_fg_color;
+    color: @theme_selected_fg_color;
+}
+
+.nemo-window .places-treeview {
+    -NemoPlacesTreeView-disk-full-bg-color: shade(@theme_base_color, 0.85);
+    -NemoPlacesTreeView-disk-full-fg-color: @sunset_orange;
+    -NemoPlacesTreeView-disk-full-bar-width: 2px;
+    -NemoPlacesTreeView-disk-full-bar-radius: 1px;
+    -NemoPlacesTreeView-disk-full-bottom-padding: 2px;
+}
+
+.nemo-window .places-treeview:selected {
+    -NemoPlacesTreeView-disk-full-bg-color: shade(@theme_selected_fg_color, 1.1);
+    -NemoPlacesTreeView-disk-full-fg-color: @sunset_orange;
+}
+
+.nemo-window .sidebar .scrollbar {
+    min-width: 10px;
+}
+
+.nemo-window .sidebar scrollbar.overlay-indicator:not(.dragging):not(.hovering) slider {
+    background-color: @theme_bg_color;
+}
+
+.nemo-window .sidebar separator,
+.nemo-window .sidebar .frame {
+    border: none;
+}
+
+.nemo-window .sidebar treeview,
+.nemo-window .sidebar .view,
+.nemo-window .sidebar treeview.view {
+    border: none;
+    background-color: shade(@theme_bg_color, 0.95);
+}
+
+.nemo-window .sidebar treeview header,
+.nemo-window .sidebar treeview header button {
+    border: none;
+    background: transparent;
+}
+
+.nemo-window .sidebar row,
+.nemo-window .sidebar .view row,
+.nemo-window .sidebar treeview row {
+    border: none;
+    background-color: transparent;
+}
+
+.nemo-window .sidebar row:hover,
+.nemo-window .sidebar .view row:hover {
+    background-color: alpha(@fog_grey, 0.3);
+    border: none;
+}
+
+.nemo-window .sidebar treeview.view cell,
+.nemo-window .sidebar .places-treeview cell {
+    border: none;
+    border-width: 0;
+}
+
+.nemo-window .sidebar .view separator,
+.nemo-window .sidebar treeview separator {
+    min-height: 0;
+    min-width: 0;
+    border: none;
+    background: transparent;
+}
+
+.nemo-window .sidebar scrolledwindow,
+.nemo-window .sidebar scrolledwindow.frame {
+    border: none;
+    background-color: shade(@theme_bg_color, 0.95);
+}
+
+.nemo-window .sidebar *:focus {
+    outline: none;
+    outline-width: 0;
+}
+
+/* Nemo Canvas */
+
+.nemo-canvas-item {
+    border-radius: 3px;
+    text-shadow: none;
+}
+
+.nemo-desktop.nemo-canvas-item {
+    color: @fog_light;
+    text-shadow: 1px 1px alpha(black, 0.6);
+}
+
+.nemo-desktop.nemo-canvas-item:selected {
+    background-color: alpha(@forest_green, 0.8);
+    background-image: none;
+    color: @theme_selected_fg_color;
+    text-shadow: none;
+}
+
+/* Nemo Inactive Pane */
+
+.nemo-inactive-pane .view {
+    background-color: shade(@theme_base_color, 0.93);
+    color: shade(@theme_fg_color, 1.2);
+}
+
+.nemo-inactive-pane .view:selected,
+.nemo-inactive-pane .nautilus-canvas-item:selected {
+    background-color: alpha(@forest_green, 0.85);
+    color: @theme_selected_fg_color;
+}
+
+/* Nemo Toolbar */
+
+.nemo-window widget .toolbar button {
+    padding: 0 5px;
+}
+
+.nemo-window widget .toolbar {
+    padding: 0 6px 0 6px;
+}
+
+/* Nemo Rename Entry */
+
+.nemo-window .nemo-window-pane widget.entry {
+    background-color: @fog_light;
+    background-image: none;
+    background-clip: padding-box;
+    padding: 2px 6px;
+    color: @deep_shadow;
+    border: 1px solid @sunset_orange;
+    border-radius: 3px;
+    caret-color: @deep_shadow;
+    box-shadow: 0 0 4px alpha(@sunset_orange, 0.5),
+                inset 0 1px alpha(white, 0.4);
+    min-width: 60px;
+}
+
+.nemo-window .nemo-window-pane widget.entry:focus {
+    background-color: @fog_light;
+    color: @deep_shadow;
+    border-color: @sunset_glow;
+    box-shadow: 0 0 6px alpha(@sunset_orange, 0.6),
+                inset 0 1px alpha(white, 0.4);
+}
+
+.nemo-window .nemo-window-pane widget.entry:selected,
+.nemo-window .nemo-window-pane widget.entry selection {
+    background-color: @sunset_orange;
+    color: @fog_light;
+}
+
+.nemo-window .view entry,
+.nemo-window treeview entry,
+.nemo-window iconview entry {
+    background-color: @fog_light;
+    background-image: none;
+    color: @deep_shadow;
+    border: 1px solid @sunset_orange;
+    border-radius: 3px;
+    padding: 2px 6px;
+    caret-color: @deep_shadow;
+    box-shadow: 0 0 4px alpha(@sunset_orange, 0.5);
+    min-width: 60px;
+}
+
+.nemo-window .view entry:focus,
+.nemo-window treeview entry:focus,
+.nemo-window iconview entry:focus {
+    background-color: @fog_light;
+    color: @deep_shadow;
+    border-color: @sunset_glow;
+    box-shadow: 0 0 6px alpha(@sunset_orange, 0.6);
+}
+
+NemoIconContainer .entry,
+.nemo-icon-view entry,
+.nemo-window NemoIconContainer .entry,
+.nemo-window .nemo-icon-view entry {
+    min-width: 60px;
+    background-color: @fog_light;
+    color: @deep_shadow;
+    border: 1px solid @sunset_orange;
+    border-radius: 3px;
+    padding: 2px 6px;
+    caret-color: @deep_shadow;
+}
+
+/* Nemo Notebook Tabs */
+
+.nemo-window .nemo-window-pane notebook > header {
+    padding: 0px;
+    margin-right: -2px;
+    margin-bottom: -1px;
+}
+
+.nemo-window .nemo-window-pane notebook > header > tabs > tab:checked {
+    background-color: @theme_base_color;
+    margin-bottom: 1px;
+}
+
+.nemo-window .nemo-window-pane > notebook box.vertical > overlay > scrolledwindow.view,
+.nemo-window .nemo-window-pane > notebook box.vertical > overlay > scrolledwindow > treeview.view {
+    background-color: @theme_base_color;
+    border: 1px solid @borders;
+}
+
+.nemo-window toolbar.primary-toolbar {
+    margin-bottom: -1px;
+}
+
+/* Nemo Rubberband */
+
+.nemo-window rubberband,
+rubberband,
+.rubberband {
+    border: 1px solid @sunset_orange;
+    background-color: alpha(@sunset_orange, 0.3);
+}
+
+/* Cinnamon Settings */
+
+.cs-header {
+    padding: 6px;
+    background-color: transparent;
+    background-image: linear-gradient(to bottom,
+                            @theme_bg_color,
+                            shade(@theme_bg_color, 0.95));
+    border-bottom: 1px solid @borders;
+}
+
+.cs-category-view,
+.cs-category-view .view {
+    background-color: transparent;
+}
+
+.cinnamon-settings list row {
+    padding: 8px 12px;
+}
+
+.cinnamon-settings list row:hover {
+    background-color: alpha(@fog_grey, 0.5);
+}
+
+.cinnamon-settings list row:selected {
+    background-color: @forest_green;
+    color: @theme_selected_fg_color;
+}

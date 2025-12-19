@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36" height="18" viewBox="0 0 36 18" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Subtle glow for hover state -->
+    <filter id="hover-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="0.5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <g id="toggle-on-hover">
+    <!-- Toggle track with hover highlight -->
+    <rect x="1" y="1" width="34" height="16" rx="8" ry="8"
+          fill="#505d6d"
+          stroke="#d4977d"
+          stroke-width="1.5"
+          filter="url(#hover-glow)"/>
+    <!-- Toggle thumb with hover highlight -->
+    <circle cx="27" cy="9" r="6"
+            fill="#eff1f3"
+            stroke="#d4977d"
+            stroke-width="1"
+            filter="url(#hover-glow)"/>
+  </g>
+</svg>

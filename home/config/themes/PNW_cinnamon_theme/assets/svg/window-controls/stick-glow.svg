@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <g id="stick-button-glow">
+    <!-- Pin icon for stick (show on all workspaces) - glow/hover state -->
+    <path d="M 12,6 L 12,12"
+          stroke="#eff1f3"
+          stroke-width="2"
+          stroke-linecap="round"
+          fill="none"/>
+    <circle cx="12" cy="15" r="2"
+            stroke="#eff1f3"
+            stroke-width="1.5"
+            fill="none"/>
+  </g>
+</svg>

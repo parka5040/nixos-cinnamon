@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Glow filter for hover state -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <g id="minimize-button-glow">
+    <!-- Outer glow circle -->
+    <circle cx="12" cy="14" r="10" fill="none" stroke="#d4977d" stroke-width="0.5" opacity="0.4"/>
+    <!-- Horizontal bar for minimize with glow -->
+    <rect x="6" y="15" width="12" height="3" rx="1.5" ry="1.5" fill="#e8b299" filter="url(#glow)"/>
+  </g>
+</svg>

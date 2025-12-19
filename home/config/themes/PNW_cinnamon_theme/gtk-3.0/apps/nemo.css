@@ -1,0 +1,131 @@
+.nemo-window .sidebar {
+    background-color: shade(@theme_bg_color, 0.95);
+    border-right: 1px solid @borders;
+}
+
+.nemo-window .sidebar row {
+    padding: 6px 12px;
+}
+
+.nemo-window .sidebar row:hover {
+    background-color: alpha(@fog_grey, 0.5);
+}
+
+.nemo-window .sidebar row:selected {
+    background-color: @forest_green;
+    color: @theme_selected_fg_color;
+}
+
+.nemo-window .sidebar .view {
+    background-color: shade(@theme_bg_color, 0.95);
+}
+
+.nemo-window toolbar {
+    background-color: @theme_bg_color;
+    border-bottom: 1px solid @borders;
+    padding: 4px;
+}
+
+.nemo-window .primary-toolbar {
+    background-color: @theme_bg_color;
+    border-bottom: 1px solid @borders;
+}
+
+.nemo-window .path-bar button {
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.nemo-window .path-bar button:hover {
+    background-color: @fog_grey;
+}
+
+.nemo-window .path-bar button:checked {
+    background-color: @forest_green;
+    color: @fog_light;
+}
+
+.nemo-window notebook {
+    background-color: @theme_base_color;
+}
+
+.nemo-window notebook header {
+    background-color: @theme_bg_color;
+}
+
+.nemo-window notebook tab {
+    padding: 6px 12px;
+}
+
+.nemo-window notebook tab:checked {
+    background-color: @forest_green;
+    border-color: @sunset_orange;
+}
+
+.nemo-window .view {
+    background-color: @theme_base_color;
+    color: @theme_text_color;
+}
+
+.nemo-window .view:selected {
+    background-color: @forest_green;
+    color: @theme_selected_fg_color;
+}
+
+.nemo-window .view:hover {
+    background-color: alpha(@fog_grey, 0.3);
+}
+
+.nemo-window statusbar {
+    background-color: @theme_bg_color;
+    border-top: 1px solid @borders;
+    padding: 4px 8px;
+}
+
+.nemo-window .floating-bar {
+    background-color: alpha(@deep_shadow, 0.9);
+    border: 1px solid @borders;
+    border-radius: 4px;
+    padding: 4px 8px;
+    color: @fog_light;
+}
+
+NemoWindow .sidebar,
+NemoWindow .sidebar .view,
+NemoWindow .sidebar .view row {
+    background-color: shade(@theme_bg_color, 0.95);
+}
+
+NemoWindow .sidebar .view row:selected {
+    background-color: @forest_green;
+    color: @theme_selected_fg_color;
+}
+
+.nemo-places-sidebar,
+.nemo-places-sidebar .view {
+    background-color: shade(@theme_bg_color, 0.95);
+}
+
+.nemo-places-sidebar .view:selected {
+    background-color: @forest_green;
+    color: @theme_selected_fg_color;
+}
+
+.nemo-window paned {
+    background-color: @theme_bg_color;
+}
+
+.nemo-window paned > separator {
+    background-color: @borders;
+    min-width: 1px;
+}
+
+.nemo-window entry.location {
+    background-color: @theme_base_color;
+    border: 1px solid @borders;
+    border-radius: 4px;
+}
+
+.nemo-window entry.location:focus {
+    border-color: @sunset_orange;
+}

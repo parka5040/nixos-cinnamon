@@ -1,0 +1,319 @@
+<?xml version="1.0"?>
+<!--
+  PNW Cinnamon Metacity Theme
+  Window manager decorations for Metacity/Muffin
+  Pacific Northwest aesthetic with sunset glow effects
+  References shared SVG assets from ../assets/svg/
+-->
+<metacity_theme>
+  <info>
+    <name>PNW-Cinnamon</name>
+    <author>parka5040</author>
+    <copyright>2024</copyright>
+    <date>2024</date>
+    <description>A cozy Pacific Northwest-inspired window theme</description>
+  </info>
+
+  <!-- Color Constants - Pacific Northwest Palette -->
+  <constant name="fg_color" value="#eff1f3"/>
+  <constant name="bg_color" value="#3d4d5c"/>
+  <constant name="base_color" value="#2b3339"/>
+  <constant name="selected_bg_color" value="#4a5f5a"/>
+  <constant name="forest_green" value="#4a5f5a"/>
+  <constant name="fog_grey" value="#505d6d"/>
+  <constant name="storm_blue" value="#3d4d5c"/>
+  <constant name="mist" value="#c5d0d9"/>
+  <constant name="sunset_orange" value="#d4977d"/>
+  <constant name="sunset_glow" value="#e8b299"/>
+  <constant name="deep_shadow" value="#2b3339"/>
+  <constant name="mid_grey" value="#65737e"/>
+
+  <!-- Frame Geometry -->
+  <frame_geometry name="normal" rounded_top_left="4" rounded_top_right="4">
+    <distance name="left_width" value="1"/>
+    <distance name="right_width" value="1"/>
+    <distance name="bottom_height" value="1"/>
+    <distance name="left_titlebar_edge" value="4"/>
+    <distance name="right_titlebar_edge" value="4"/>
+    <distance name="title_vertical_pad" value="2"/>
+    <border name="title_border" left="4" right="4" top="2" bottom="2"/>
+    <border name="button_border" left="1" right="1" top="2" bottom="2"/>
+    <distance name="button_width" value="14"/>
+    <distance name="button_height" value="14"/>
+  </frame_geometry>
+
+  <frame_geometry name="normal_small_borders" parent="normal" rounded_top_left="4" rounded_top_right="4">
+    <distance name="left_width" value="1"/>
+    <distance name="right_width" value="1"/>
+    <distance name="bottom_height" value="1"/>
+  </frame_geometry>
+
+  <frame_geometry name="maximized" parent="normal" rounded_top_left="0" rounded_top_right="0">
+    <distance name="left_width" value="0"/>
+    <distance name="right_width" value="0"/>
+    <distance name="bottom_height" value="0"/>
+    <distance name="left_titlebar_edge" value="4"/>
+    <distance name="right_titlebar_edge" value="4"/>
+  </frame_geometry>
+
+  <frame_geometry name="tiled_left" parent="normal" rounded_top_left="0" rounded_top_right="8">
+    <distance name="left_width" value="0"/>
+  </frame_geometry>
+
+  <frame_geometry name="tiled_right" parent="normal" rounded_top_left="8" rounded_top_right="0">
+    <distance name="right_width" value="0"/>
+  </frame_geometry>
+
+  <frame_geometry name="shaded" parent="normal" rounded_top_left="8" rounded_top_right="8">
+    <distance name="bottom_height" value="1"/>
+  </frame_geometry>
+
+  <frame_geometry name="border" has_title="false">
+    <distance name="left_width" value="1"/>
+    <distance name="right_width" value="1"/>
+    <distance name="bottom_height" value="1"/>
+    <distance name="title_vertical_pad" value="0"/>
+    <border name="title_border" left="0" right="0" top="0" bottom="0"/>
+    <border name="button_border" left="0" right="0" top="0" bottom="0"/>
+  </frame_geometry>
+
+  <!-- Draw Operations -->
+
+  <!-- Titlebar Background - Focused -->
+  <draw_ops name="titlebar_fill_focused">
+    <rectangle color="storm_blue" x="0" y="0" width="width" height="height" filled="true"/>
+    <line color="blend/deep_shadow/bg_color/0.5" x1="0" y1="height-1" x2="width" y2="height-1"/>
+  </draw_ops>
+
+  <!-- Titlebar Background - Unfocused -->
+  <draw_ops name="titlebar_fill_unfocused">
+    <rectangle color="blend/storm_blue/deep_shadow/0.7" x="0" y="0" width="width" height="height" filled="true"/>
+    <line color="deep_shadow" x1="0" y1="height-1" x2="width" y2="height-1"/>
+  </draw_ops>
+
+  <!-- Title Text - Focused -->
+  <draw_ops name="title_focused">
+    <title color="fg_color" x="(width-title_width)/2" y="(height-title_height)/2"/>
+  </draw_ops>
+
+  <!-- Title Text - Unfocused -->
+  <draw_ops name="title_unfocused">
+    <title color="mid_grey" x="(width-title_width)/2" y="(height-title_height)/2"/>
+  </draw_ops>
+
+  <!-- Window Border - Focused -->
+  <draw_ops name="border_focused">
+    <line color="deep_shadow" x1="0" y1="0" x2="width" y2="0"/>
+    <line color="deep_shadow" x1="0" y1="0" x2="0" y2="height"/>
+    <line color="deep_shadow" x1="width-1" y1="0" x2="width-1" y2="height"/>
+    <line color="deep_shadow" x1="0" y1="height-1" x2="width" y2="height-1"/>
+  </draw_ops>
+
+  <!-- Window Border - Unfocused -->
+  <draw_ops name="border_unfocused">
+    <line color="blend/deep_shadow/base_color/0.5" x1="0" y1="0" x2="width" y2="0"/>
+    <line color="blend/deep_shadow/base_color/0.5" x1="0" y1="0" x2="0" y2="height"/>
+    <line color="blend/deep_shadow/base_color/0.5" x1="width-1" y1="0" x2="width-1" y2="height"/>
+    <line color="blend/deep_shadow/base_color/0.5" x1="0" y1="height-1" x2="width" y2="height-1"/>
+  </draw_ops>
+
+  <!-- Close Button -->
+  <draw_ops name="close_focused">
+    <image filename="close.svg" x="0" y="0" width="width" height="height"/>
+  </draw_ops>
+
+  <draw_ops name="close_focused_prelight">
+    <image filename="close-glow.svg" x="0" y="0" width="width" height="height"/>
+  </draw_ops>
+
+  <draw_ops name="close_focused_pressed">
+    <image filename="close-glow.svg" x="0" y="0" width="width" height="height"/>
+  </draw_ops>
+
+  <draw_ops name="close_unfocused">
+    <image filename="close.svg" x="0" y="0" width="width" height="height"/>
+  </draw_ops>
+
+  <!-- Maximize Button -->
+  <draw_ops name="maximize_focused">
+    <image filename="maximize.svg" x="0" y="0" width="width" height="height"/>
+  </draw_ops>
+
+  <draw_ops name="maximize_focused_prelight">
+    <image filename="maximize-glow.svg" x="0" y="0" width="width" height="height"/>
+  </draw_ops>
+
+  <draw_ops name="maximize_focused_pressed">
+    <image filename="maximize-glow.svg" x="0" y="0" width="width" height="height"/>
+  </draw_ops>
+
+  <draw_ops name="maximize_unfocused">
+    <image filename="maximize.svg" x="0" y="0" width="width" height="height"/>
+  </draw_ops>
+
+  <!-- Unmaximize/Restore Button -->
+  <draw_ops name="unmaximize_focused">
+    <image filename="restore.svg" x="0" y="0" width="width" height="height"/>
+  </draw_ops>
+
+  <draw_ops name="unmaximize_focused_prelight">
+    <image filename="restore-glow.svg" x="0" y="0" width="width" height="height"/>
+  </draw_ops>
+
+  <draw_ops name="unmaximize_focused_pressed">
+    <image filename="restore-glow.svg" x="0" y="0" width="width" height="height"/>
+  </draw_ops>
+
+  <draw_ops name="unmaximize_unfocused">
+    <image filename="restore.svg" x="0" y="0" width="width" height="height"/>
+  </draw_ops>
+
+  <!-- Minimize Button -->
+  <draw_ops name="minimize_focused">
+    <image filename="minimize.svg" x="0" y="0" width="width" height="height"/>
+  </draw_ops>
+
+  <draw_ops name="minimize_focused_prelight">
+    <image filename="minimize-glow.svg" x="0" y="0" width="width" height="height"/>
+  </draw_ops>
+
+  <draw_ops name="minimize_focused_pressed">
+    <image filename="minimize-glow.svg" x="0" y="0" width="width" height="height"/>
+  </draw_ops>
+
+  <draw_ops name="minimize_unfocused">
+    <image filename="minimize.svg" x="0" y="0" width="width" height="height"/>
+  </draw_ops>
+
+  <!-- Shade Button -->
+  <draw_ops name="shade_focused">
+    <image filename="shade.svg" x="0" y="0" width="width" height="height"/>
+  </draw_ops>
+
+  <draw_ops name="shade_focused_prelight">
+    <image filename="shade-glow.svg" x="0" y="0" width="width" height="height"/>
+  </draw_ops>
+
+  <draw_ops name="shade_unfocused">
+    <image filename="shade.svg" x="0" y="0" width="width" height="height"/>
+  </draw_ops>
+
+  <!-- Unshade Button -->
+  <draw_ops name="unshade_focused">
+    <image filename="shade.svg" x="0" y="0" width="width" height="height"/>
+  </draw_ops>
+
+  <draw_ops name="unshade_focused_prelight">
+    <image filename="shade-glow.svg" x="0" y="0" width="width" height="height"/>
+  </draw_ops>
+
+  <draw_ops name="unshade_unfocused">
+    <image filename="shade.svg" x="0" y="0" width="width" height="height"/>
+  </draw_ops>
+
+  <!-- Menu Button (if needed) -->
+  <draw_ops name="menu_focused">
+    <rectangle color="fog_grey" x="0" y="0" width="width" height="height" filled="true"/>
+    <line color="fg_color" x1="4" y1="height/2-4" x2="width-4" y2="height/2-4"/>
+    <line color="fg_color" x1="4" y1="height/2" x2="width-4" y2="height/2"/>
+    <line color="fg_color" x1="4" y1="height/2+4" x2="width-4" y2="height/2+4"/>
+  </draw_ops>
+
+  <!-- Frame Style Definitions -->
+  <frame_style name="normal_focused" geometry="normal">
+    <piece position="entire_background" draw_ops="titlebar_fill_focused"/>
+    <piece position="title" draw_ops="title_focused"/>
+    <piece position="overlay" draw_ops="border_focused"/>
+    <button function="close" state="normal" draw_ops="close_focused"/>
+    <button function="close" state="prelight" draw_ops="close_focused_prelight"/>
+    <button function="close" state="pressed" draw_ops="close_focused_pressed"/>
+    <button function="maximize" state="normal" draw_ops="maximize_focused"/>
+    <button function="maximize" state="prelight" draw_ops="maximize_focused_prelight"/>
+    <button function="maximize" state="pressed" draw_ops="maximize_focused_pressed"/>
+    <button function="minimize" state="normal" draw_ops="minimize_focused"/>
+    <button function="minimize" state="prelight" draw_ops="minimize_focused_prelight"/>
+    <button function="minimize" state="pressed" draw_ops="minimize_focused_pressed"/>
+    <button function="shade" state="normal" draw_ops="shade_focused"/>
+    <button function="shade" state="prelight" draw_ops="shade_focused_prelight"/>
+    <button function="unshade" state="normal" draw_ops="unshade_focused"/>
+    <button function="unshade" state="prelight" draw_ops="unshade_focused_prelight"/>
+  </frame_style>
+
+  <frame_style name="normal_unfocused" geometry="normal">
+    <piece position="entire_background" draw_ops="titlebar_fill_unfocused"/>
+    <piece position="title" draw_ops="title_unfocused"/>
+    <piece position="overlay" draw_ops="border_unfocused"/>
+    <button function="close" state="normal" draw_ops="close_unfocused"/>
+    <button function="close" state="prelight" draw_ops="close_focused_prelight"/>
+    <button function="maximize" state="normal" draw_ops="maximize_unfocused"/>
+    <button function="maximize" state="prelight" draw_ops="maximize_focused_prelight"/>
+    <button function="minimize" state="normal" draw_ops="minimize_unfocused"/>
+    <button function="minimize" state="prelight" draw_ops="minimize_focused_prelight"/>
+    <button function="shade" state="normal" draw_ops="shade_unfocused"/>
+    <button function="shade" state="prelight" draw_ops="shade_focused_prelight"/>
+    <button function="unshade" state="normal" draw_ops="unshade_unfocused"/>
+    <button function="unshade" state="prelight" draw_ops="unshade_focused_prelight"/>
+  </frame_style>
+
+  <frame_style name="normal_maximized" geometry="maximized" parent="normal_focused">
+    <button function="maximize" state="normal" draw_ops="unmaximize_focused"/>
+    <button function="maximize" state="prelight" draw_ops="unmaximize_focused_prelight"/>
+    <button function="maximize" state="pressed" draw_ops="unmaximize_focused_pressed"/>
+  </frame_style>
+
+  <frame_style name="normal_maximized_unfocused" geometry="maximized" parent="normal_unfocused">
+    <button function="maximize" state="normal" draw_ops="unmaximize_unfocused"/>
+    <button function="maximize" state="prelight" draw_ops="unmaximize_focused_prelight"/>
+  </frame_style>
+
+  <frame_style name="tiled_left_focused" geometry="tiled_left" parent="normal_focused"/>
+  <frame_style name="tiled_left_unfocused" geometry="tiled_left" parent="normal_unfocused"/>
+  <frame_style name="tiled_right_focused" geometry="tiled_right" parent="normal_focused"/>
+  <frame_style name="tiled_right_unfocused" geometry="tiled_right" parent="normal_unfocused"/>
+  <frame_style name="shaded_focused" geometry="shaded" parent="normal_focused"/>
+  <frame_style name="shaded_unfocused" geometry="shaded" parent="normal_unfocused"/>
+  <frame_style name="border_focused" geometry="border">
+    <piece position="entire_background" draw_ops="border_focused"/>
+  </frame_style>
+  <frame_style name="border_unfocused" geometry="border">
+    <piece position="entire_background" draw_ops="border_unfocused"/>
+  </frame_style>
+
+  <!-- Frame Style Sets -->
+  <frame_style_set name="normal">
+    <frame focus="yes" state="normal" resize="both" style="normal_focused"/>
+    <frame focus="no" state="normal" resize="both" style="normal_unfocused"/>
+    <frame focus="yes" state="maximized" style="normal_maximized"/>
+    <frame focus="no" state="maximized" style="normal_maximized_unfocused"/>
+    <frame focus="yes" state="tiled_left" style="tiled_left_focused"/>
+    <frame focus="no" state="tiled_left" style="tiled_left_unfocused"/>
+    <frame focus="yes" state="tiled_right" style="tiled_right_focused"/>
+    <frame focus="no" state="tiled_right" style="tiled_right_unfocused"/>
+    <frame focus="yes" state="shaded" style="shaded_focused"/>
+    <frame focus="no" state="shaded" style="shaded_unfocused"/>
+    <frame focus="yes" state="maximized_and_shaded" style="normal_maximized"/>
+    <frame focus="no" state="maximized_and_shaded" style="normal_maximized_unfocused"/>
+  </frame_style_set>
+
+  <frame_style_set name="border">
+    <frame focus="yes" state="normal" resize="both" style="border_focused"/>
+    <frame focus="no" state="normal" resize="both" style="border_unfocused"/>
+    <frame focus="yes" state="maximized" style="border_focused"/>
+    <frame focus="no" state="maximized" style="border_unfocused"/>
+    <frame focus="yes" state="shaded" style="border_focused"/>
+    <frame focus="no" state="shaded" style="border_unfocused"/>
+    <frame focus="yes" state="maximized_and_shaded" style="border_focused"/>
+    <frame focus="no" state="maximized_and_shaded" style="border_unfocused"/>
+  </frame_style_set>
+
+  <!-- Window Type Assignments -->
+  <window type="normal" style_set="normal"/>
+  <window type="dialog" style_set="normal"/>
+  <window type="modal_dialog" style_set="normal"/>
+  <window type="menu" style_set="border"/>
+  <window type="utility" style_set="normal"/>
+  <window type="border" style_set="border"/>
+  <window type="toolbar" style_set="border"/>
+  <window type="desktop" style_set="border"/>
+
+</metacity_theme>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+  <g id="radio-mixed">
+    <!-- Filled circular radio button background -->
+    <circle cx="8" cy="8" r="7"
+            fill="#505d6d"
+            stroke="#505d6d"
+            stroke-width="1"/>
+    <!-- Horizontal line for mixed/indeterminate state -->
+    <path d="M 5,8 L 11,8"
+          stroke="#c5d0d9"
+          stroke-width="2"
+          stroke-linecap="round"
+          fill="none"/>
+  </g>
+</svg>

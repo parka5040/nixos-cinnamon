@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=PNW-Cinnamon
+Comment=A cozy Pacific Northwest-inspired theme for Cinnamon desktop
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=PNW-Cinnamon
+MetacityTheme=PNW-Cinnamon
+IconTheme=Adwaita
+CursorTheme=Adwaita
+ButtonLayout=menu:minimize,maximize,close

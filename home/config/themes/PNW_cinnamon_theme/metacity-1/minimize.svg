@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <g id="minimize-button">
+    <!-- Horizontal bar for minimize -->
+    <rect x="6" y="16" width="12" height="2" rx="1" ry="1" fill="#c5d0d9"/>
+  </g>
+</svg>

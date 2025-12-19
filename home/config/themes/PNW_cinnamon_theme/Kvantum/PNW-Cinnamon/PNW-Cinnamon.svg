@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  PNW Cinnamon Kvantum Theme SVG Elements
+  This file defines graphical elements used by the Kvantum theme engine
+  Colors match the Pacific Northwest palette
+-->
+<svg width="200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Pacific Northwest Color Palette -->
+    <style type="text/css">
+      .forest-green { fill: #4a5f5a; }
+      .fog-grey { fill: #505d6d; }
+      .storm-blue { fill: #3d4d5c; }
+      .mist { fill: #c5d0d9; }
+      .sunset-orange { fill: #d4977d; }
+      .sunset-glow { fill: #e8b299; }
+      .deep-shadow { fill: #2b3339; }
+      .mid-grey { fill: #65737e; }
+      .fog-light { fill: #eff1f3; }
+      .border { fill: none; stroke: #2b3339; stroke-width: 1; }
+    </style>
+  </defs>
+
+  <!-- Button Normal -->
+  <g id="button">
+    <rect class="storm-blue" x="0" y="0" width="100" height="32" rx="4"/>
+    <rect class="border" x="0" y="0" width="100" height="32" rx="4"/>
+  </g>
+
+  <!-- Button Hover -->
+  <g id="button-hover">
+    <rect class="fog-grey" x="0" y="40" width="100" height="32" rx="4"/>
+    <rect class="border" x="0" y="40" width="100" height="32" rx="4"/>
+  </g>
+
+  <!-- Button Pressed -->
+  <g id="button-pressed">
+    <rect class="forest-green" x="0" y="80" width="100" height="32" rx="4"/>
+    <rect fill="none" stroke="#d4977d" stroke-width="1" x="0" y="80" width="100" height="32" rx="4"/>
+  </g>
+
+  <!-- Line Edit -->
+  <g id="lineedit">
+    <rect class="deep-shadow" x="0" y="120" width="100" height="32" rx="4"/>
+    <rect class="border" x="0" y="120" width="100" height="32" rx="4"/>
+  </g>
+
+  <!-- Line Edit Focus -->
+  <g id="lineedit-focus">
+    <rect class="deep-shadow" x="0" y="160" width="100" height="32" rx="4"/>
+    <rect fill="none" stroke="#d4977d" stroke-width="1" x="0" y="160" width="100" height="32" rx="4"/>
+  </g>
+
+  <!-- Menu Background -->
+  <g id="menu">
+    <rect class="storm-blue" x="0" y="200" width="150" height="100" rx="6"/>
+    <rect class="border" x="0" y="200" width="150" height="100" rx="6"/>
+  </g>
+
+  <!-- Menu Item -->
+  <g id="menuitem">
+    <rect fill="transparent" x="4" y="204" width="142" height="28" rx="4"/>
+  </g>
+
+  <!-- Menu Item Hover -->
+  <g id="menuitem-hover">
+    <rect class="fog-grey" x="4" y="236" width="142" height="28" rx="4"/>
+  </g>
+
+  <!-- Checkbox Unchecked -->
+  <g id="checkbox">
+    <rect class="storm-blue" x="0" y="310" width="18" height="18" rx="3"/>
+    <rect class="border" x="0" y="310" width="18" height="18" rx="3"/>
+  </g>
+
+  <!-- Checkbox Checked (reference to shared asset) -->
+  <g id="checkbox-checked">
+    <rect class="storm-blue" x="20" y="310" width="18" height="18" rx="3"/>
+    <path class="sunset-orange" d="M 27 314 L 31 318 L 35 313" stroke="#d4977d" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Radio Unchecked -->
+  <g id="radio">
+    <circle class="storm-blue" cx="9" cy="348" r="9"/>
+    <circle class="border" cx="9" cy="348" r="9"/>
+  </g>
+
+  <!-- Radio Checked -->
+  <g id="radio-checked">
+    <circle class="storm-blue" cx="29" cy="348" r="9"/>
+    <circle class="border" cx="29" cy="348" r="9"/>
+    <circle class="sunset-orange" cx="29" cy="348" r="5"/>
+  </g>
+
+  <!-- Scrollbar Slider -->
+  <g id="scrollbarslider">
+    <rect class="mid-grey" x="0" y="370" width="12" height="40" rx="6" opacity="0.5"/>
+  </g>
+
+  <!-- Scrollbar Slider Hover -->
+  <g id="scrollbarslider-hover">
+    <rect class="mid-grey" x="16" y="370" width="12" height="40" rx="6"/>
+  </g>
+
+  <!-- Slider Groove -->
+  <g id="slider">
+    <rect class="deep-shadow" x="0" y="420" width="100" height="4" rx="2"/>
+  </g>
+
+  <!-- Slider Handle -->
+  <g id="slidercursor">
+    <circle class="fog-grey" cx="8" cy="444" r="8"/>
+    <circle fill="none" stroke="#65737e" stroke-width="1" cx="8" cy="444" r="8"/>
+  </g>
+
+  <!-- Progress Bar Background -->
+  <g id="progress">
+    <rect class="deep-shadow" x="0" y="460" width="100" height="8" rx="4"/>
+  </g>
+
+  <!-- Progress Bar Fill -->
+  <g id="progress-pattern">
+    <rect class="sunset-orange" x="0" y="475" width="60" height="8" rx="4"/>
+  </g>
+
+  <!-- Tab Inactive -->
+  <g id="tab">
+    <rect fill="transparent" x="0" y="490" width="80" height="32" rx="4"/>
+  </g>
+
+  <!-- Tab Active -->
+  <g id="tab-active">
+    <rect class="forest-green" x="84" y="490" width="80" height="32" rx="4"/>
+    <rect fill="none" stroke="#d4977d" stroke-width="1" x="84" y="490" width="80" height="32" rx="4"/>
+  </g>
+
+  <!-- Tab Close Button -->
+  <g id="tab-close">
+    <path d="M 3,3 L 11,11 M 11,3 L 3,11"
+          stroke="#c5d0d9"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          fill="none"/>
+  </g>
+
+  <!-- Tab Close Button Hover -->
+  <g id="tab-close-hover">
+    <circle fill="rgba(193, 123, 110, 0.5)" cx="7" cy="7" r="8"/>
+    <path d="M 3,3 L 11,11 M 11,3 L 3,11"
+          stroke="#eff1f3"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          fill="none"/>
+  </g>
+
+  <!-- Tab Close Button Pressed -->
+  <g id="tab-close-pressed">
+    <circle fill="#c17b6e" cx="7" cy="7" r="8"/>
+    <path d="M 3,3 L 11,11 M 11,3 L 3,11"
+          stroke="#eff1f3"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          fill="none"/>
+  </g>
+
+  <!-- Toolbar -->
+  <g id="toolbar">
+    <rect class="storm-blue" x="0" y="530" width="200" height="40"/>
+    <line stroke="#2b3339" stroke-width="1" x1="0" y1="569" x2="200" y2="569"/>
+  </g>
+
+  <!-- Tooltip -->
+  <g id="tooltip">
+    <rect fill="rgba(43, 51, 57, 0.95)" x="0" y="580" width="120" height="32" rx="4"/>
+    <rect fill="none" stroke="#65737e" stroke-width="1" x="0" y="580" width="120" height="32" rx="4"/>
+  </g>
+
+  <!-- Item View -->
+  <g id="itemview">
+    <rect class="deep-shadow" x="0" y="620" width="120" height="80" rx="4"/>
+    <rect class="border" x="0" y="620" width="120" height="80" rx="4"/>
+  </g>
+
+  <!-- Item View Selection -->
+  <g id="itemview-selected">
+    <rect class="forest-green" x="4" y="624" width="112" height="24" rx="2"/>
+  </g>
+
+  <!-- Focus Indicator -->
+  <g id="focus">
+    <rect fill="none" stroke="#d4977d" stroke-width="2" stroke-dasharray="2,2" x="0" y="710" width="100" height="32" rx="4"/>
+  </g>
+
+  <!-- Header Section -->
+  <g id="header">
+    <rect class="storm-blue" x="0" y="750" width="100" height="32"/>
+    <rect fill="none" stroke="#2b3339" stroke-width="1" x="0" y="750" width="100" height="32"/>
+  </g>
+</svg>

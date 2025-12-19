@@ -1,0 +1,1217 @@
+/* Color Definitions */
+
+@define-color theme_fg_color #eff1f3;
+@define-color theme_bg_color #3d4d5c;
+@define-color theme_base_color #2b3339;
+@define-color theme_selected_bg_color #4a5f5a;
+@define-color theme_selected_fg_color #eff1f3;
+@define-color theme_text_color #eff1f3;
+
+@define-color insensitive_bg_color #3d4d5c;
+@define-color insensitive_fg_color #65737e;
+@define-color insensitive_base_color #2b3339;
+
+@define-color borders #2b3339;
+@define-color border_color #2b3339;
+
+@define-color link_color #d4977d;
+@define-color visited_link_color #a68a7b;
+
+@define-color forest_green #4a5f5a;
+@define-color fog_grey #505d6d;
+@define-color storm_blue #3d4d5c;
+@define-color mist #c5d0d9;
+@define-color sunset_orange #d4977d;
+@define-color sunset_glow #e8b299;
+@define-color cedar #a68a7b;
+@define-color deep_shadow #2b3339;
+@define-color mid_grey #65737e;
+@define-color fog_light #eff1f3;
+
+@define-color warning_color #d4977d;
+@define-color error_color #c17b6e;
+@define-color success_color #6b9080;
+
+/* Global Styles */
+
+* {
+    padding: 0;
+    -gtk-icon-style: symbolic;
+    outline: none;
+    outline-width: 0;
+}
+
+*:focus {
+    outline-color: alpha(@sunset_orange, 0.5);
+    outline-style: solid;
+    outline-offset: -2px;
+    outline-width: 2px;
+    -gtk-outline-radius: 4px;
+}
+
+*:disabled {
+    -gtk-icon-effect: dim;
+}
+
+/* Base Widgets */
+
+.background {
+    color: @theme_fg_color;
+    background-color: @theme_bg_color;
+}
+
+.gtkstyle-fallback {
+    color: @theme_fg_color;
+    background-color: @theme_bg_color;
+}
+
+.gtkstyle-fallback:hover {
+    color: @fog_light;
+    background-color: @fog_grey;
+}
+
+.gtkstyle-fallback:active,
+.gtkstyle-fallback:selected {
+    color: @theme_selected_fg_color;
+    background-color: @theme_selected_bg_color;
+}
+
+.gtkstyle-fallback:disabled {
+    color: @insensitive_fg_color;
+    background-color: @insensitive_bg_color;
+}
+
+/* Text and Labels */
+
+.view,
+textview text {
+    color: @theme_text_color;
+    background-color: @theme_base_color;
+}
+
+.view:selected,
+.view:selected:focus,
+textview text:selected,
+textview text:selected:focus {
+    color: @theme_selected_fg_color;
+    background-color: @forest_green;
+    border-radius: 4px;
+}
+
+textview border {
+    background-color: @theme_bg_color;
+}
+
+label {
+    color: @theme_fg_color;
+}
+
+label:disabled {
+    color: @insensitive_fg_color;
+}
+
+label selection {
+    color: @theme_selected_fg_color;
+    background-color: @sunset_orange;
+}
+
+/* Entries */
+
+entry {
+    min-height: 32px;
+    padding: 6px 10px;
+    border: 1px solid @borders;
+    border-radius: 4px;
+    background-color: @theme_base_color;
+    color: @theme_text_color;
+    caret-color: @sunset_orange;
+    transition: all 200ms ease;
+}
+
+entry:focus {
+    border-color: @sunset_orange;
+    box-shadow: 0 0 0 1px alpha(@sunset_glow, 0.4);
+}
+
+entry:disabled {
+    background-color: @insensitive_base_color;
+    color: @insensitive_fg_color;
+    border-color: @borders;
+}
+
+entry selection {
+    background-color: @sunset_orange;
+    color: @deep_shadow;
+}
+
+entry progress {
+    margin: 2px;
+    border-radius: 2px;
+    background-color: @sunset_orange;
+    background-image: none;
+}
+
+entry.error {
+    border-color: @error_color;
+}
+
+entry.warning {
+    border-color: @warning_color;
+}
+
+/* Buttons */
+
+button {
+    min-height: 32px;
+    min-width: 16px;
+    padding: 6px 12px;
+    border: 1px solid @borders;
+    border-radius: 4px;
+    background-color: @theme_bg_color;
+    background-image: none;
+    color: @theme_fg_color;
+    transition: all 200ms ease;
+}
+
+button:hover {
+    background-color: @fog_grey;
+    border-color: @mid_grey;
+    color: @fog_light;
+}
+
+button:active,
+button:checked {
+    background-color: @forest_green;
+    border-color: @sunset_orange;
+    box-shadow: inset 0 0 0 1px alpha(@sunset_orange, 0.3);
+}
+
+button:disabled {
+    background-color: @insensitive_bg_color;
+    border-color: @borders;
+    color: @insensitive_fg_color;
+}
+
+button:focus {
+    border-color: @sunset_orange;
+    box-shadow: 0 0 0 1px alpha(@sunset_glow, 0.4);
+}
+
+button.suggested-action {
+    background-color: @success_color;
+    border-color: shade(@success_color, 0.8);
+    color: @fog_light;
+}
+
+button.suggested-action:hover {
+    background-color: shade(@success_color, 1.1);
+}
+
+button.destructive-action {
+    background-color: @error_color;
+    border-color: shade(@error_color, 0.8);
+    color: @fog_light;
+}
+
+button.destructive-action:hover {
+    background-color: shade(@error_color, 1.1);
+}
+
+button.flat {
+    border-color: transparent;
+    background-color: transparent;
+    background-image: none;
+}
+
+button.flat:hover {
+    background-color: alpha(@fog_grey, 0.5);
+    border-color: transparent;
+}
+
+button.flat:active,
+button.flat:checked {
+    background-color: alpha(@forest_green, 0.6);
+    border-color: transparent;
+}
+
+button.image-button {
+    min-width: 32px;
+    padding: 6px;
+}
+
+/* Checkboxes */
+
+checkbutton {
+    margin: 2px 0;
+}
+
+checkbutton:disabled {
+    color: @insensitive_fg_color;
+}
+
+check {
+    min-width: 18px;
+    min-height: 18px;
+    margin: 0 6px 0 0;
+    border: 1px solid @borders;
+    border-radius: 3px;
+    background-color: @theme_bg_color;
+    transition: all 200ms ease;
+}
+
+check:hover {
+    background-color: @fog_grey;
+    border-color: @mid_grey;
+}
+
+check:checked {
+    background-image: url("../assets/svg/checkboxes/checkbox-checked.svg");
+    background-size: 18px 18px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: @theme_bg_color;
+    border-color: @sunset_orange;
+}
+
+check:checked:hover {
+    background-image: url("../assets/svg/checkboxes/checkbox-checked-hover.svg");
+    background-color: @fog_grey;
+}
+
+check:checked:focus {
+    background-image: url("../assets/svg/checkboxes/checkbox-checked-focus.svg");
+    border-color: @sunset_orange;
+    box-shadow: 0 0 0 1px alpha(@sunset_glow, 0.4);
+}
+
+check:disabled {
+    background-color: @insensitive_bg_color;
+    border-color: @borders;
+}
+
+/* Radio Buttons */
+
+radiobutton {
+    margin: 2px 0;
+}
+
+radiobutton:disabled {
+    color: @insensitive_fg_color;
+}
+
+radio {
+    min-width: 18px;
+    min-height: 18px;
+    margin: 0 6px 0 0;
+    border: 1px solid @borders;
+    border-radius: 9px;
+    background-color: @theme_bg_color;
+    transition: all 200ms ease;
+}
+
+radio:hover {
+    background-color: @fog_grey;
+    border-color: @mid_grey;
+}
+
+radio:checked {
+    background-image: url("../assets/svg/radio-buttons/radio-checked.svg");
+    background-size: 18px 18px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: @theme_bg_color;
+    border-color: @sunset_orange;
+}
+
+radio:checked:hover {
+    background-image: url("../assets/svg/radio-buttons/radio-checked-hover.svg");
+    background-color: @fog_grey;
+}
+
+radio:checked:focus {
+    background-image: url("../assets/svg/radio-buttons/radio-checked-focus.svg");
+    border-color: @sunset_orange;
+    box-shadow: 0 0 0 1px alpha(@sunset_glow, 0.4);
+}
+
+radio:disabled {
+    background-color: @insensitive_bg_color;
+    border-color: @borders;
+}
+
+/* Toggle Switches */
+
+switch {
+    min-width: 48px;
+    min-height: 24px;
+    padding: 0;
+    border: none;
+    border-radius: 12px;
+    background-color: transparent;
+    background-image: url("../assets/svg/toggles/toggle-off.svg");
+    background-size: 48px 24px;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: none;
+    font-size: 0;
+    color: transparent;
+}
+
+switch:hover {
+    background-image: url("../assets/svg/toggles/toggle-off-hover.svg");
+}
+
+switch:checked {
+    background-image: url("../assets/svg/toggles/toggle-on.svg");
+}
+
+switch:checked:hover {
+    background-image: url("../assets/svg/toggles/toggle-on-hover.svg");
+}
+
+switch:disabled {
+    background-image: url("../assets/svg/toggles/toggle-off-insensitive.svg");
+}
+
+switch:disabled:checked {
+    background-image: url("../assets/svg/toggles/toggle-on-insensitive.svg");
+}
+
+switch slider {
+    min-width: 0;
+    min-height: 0;
+    margin: -100px;
+    padding: 0;
+    border: none;
+    border-width: 0;
+    border-radius: 0;
+    background: none;
+    background-color: transparent;
+    background-image: none;
+    box-shadow: none;
+    opacity: 0;
+    -gtk-icon-source: none;
+}
+
+switch image {
+    opacity: 0;
+    margin: -100px;
+}
+
+/* Scrollbars */
+
+scrollbar {
+    background-color: transparent;
+    transition: all 200ms ease;
+}
+
+scrollbar slider {
+    min-width: 10px;
+    min-height: 10px;
+    margin: 2px;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    background-color: alpha(@mid_grey, 0.5);
+    transition: all 200ms ease;
+}
+
+scrollbar slider:hover {
+    background-color: @mid_grey;
+    border-color: @mid_grey;
+}
+
+scrollbar slider:active {
+    background-color: @fog_grey;
+    border-color: @sunset_orange;
+}
+
+scrollbar slider:disabled {
+    opacity: 0.3;
+}
+
+scrollbar.vertical slider {
+    min-width: 10px;
+}
+
+scrollbar.horizontal slider {
+    min-height: 10px;
+}
+
+scrollbar.overlay-indicator:not(.dragging):not(.hovering) {
+    opacity: 0.4;
+}
+
+scrollbar.overlay-indicator:not(.dragging):not(.hovering) slider {
+    min-width: 6px;
+    min-height: 6px;
+    margin: 1px;
+}
+
+/* Scales and Sliders */
+
+scale {
+    min-height: 16px;
+    min-width: 16px;
+}
+
+scale trough {
+    min-height: 4px;
+    min-width: 4px;
+    border-radius: 2px;
+    background-color: @borders;
+}
+
+scale highlight {
+    border-radius: 2px;
+    background-color: @sunset_orange;
+}
+
+scale slider {
+    min-width: 16px;
+    min-height: 16px;
+    margin: -6px;
+    border: 1px solid @mid_grey;
+    border-radius: 8px;
+    background-color: @fog_grey;
+    transition: all 200ms ease;
+}
+
+scale slider:hover {
+    background-color: @fog_grey;
+    border-color: @sunset_orange;
+    box-shadow: 0 0 0 2px alpha(@sunset_glow, 0.4);
+}
+
+scale slider:active {
+    background-color: @sunset_orange;
+    border-color: @sunset_glow;
+}
+
+scale slider:disabled {
+    background-color: @insensitive_bg_color;
+    border-color: @borders;
+}
+
+scale.horizontal trough {
+    min-height: 4px;
+}
+
+scale.vertical trough {
+    min-width: 4px;
+}
+
+scale marks {
+    color: @mid_grey;
+}
+
+scale value {
+    color: @theme_fg_color;
+}
+
+/* Progressbars */
+
+progressbar {
+    font-size: 9pt;
+    color: @theme_fg_color;
+}
+
+progressbar trough {
+    min-height: 8px;
+    border-radius: 4px;
+    background-color: @borders;
+}
+
+progressbar progress {
+    min-height: 8px;
+    border-radius: 4px;
+    background-color: @sunset_orange;
+    background-image: none;
+    box-shadow: 0 0 4px alpha(@sunset_glow, 0.5);
+}
+
+progressbar.horizontal trough {
+    min-width: 150px;
+}
+
+progressbar.horizontal progress {
+    margin: 0;
+}
+
+progressbar.vertical trough {
+    min-height: 80px;
+}
+
+progressbar.vertical progress {
+    margin: 0;
+}
+
+/* Spinbuttons */
+
+spinbutton {
+    border: 1px solid @borders;
+    border-radius: 4px;
+    background-color: @theme_base_color;
+}
+
+spinbutton:focus {
+    border-color: @sunset_orange;
+    box-shadow: 0 0 0 1px alpha(@sunset_glow, 0.4);
+}
+
+spinbutton:disabled {
+    background-color: @insensitive_base_color;
+    color: @insensitive_fg_color;
+}
+
+spinbutton button {
+    min-height: 16px;
+    margin: 0;
+    padding: 2px 4px;
+    border: none;
+    border-radius: 0;
+    background-color: transparent;
+    background-image: none;
+}
+
+spinbutton button:hover {
+    background-color: alpha(@fog_grey, 0.5);
+}
+
+spinbutton button:active {
+    background-color: alpha(@forest_green, 0.6);
+}
+
+spinbutton button:disabled {
+    color: @insensitive_fg_color;
+}
+
+spinbutton.vertical button {
+    min-width: 16px;
+}
+
+/* Comboboxes */
+
+combobox button {
+    padding: 6px;
+}
+
+combobox arrow {
+    min-height: 16px;
+    min-width: 16px;
+    -gtk-icon-source: url("../assets/svg/menu-arrows/dropdown-arrow.svg");
+}
+
+combobox:hover arrow {
+    -gtk-icon-source: url("../assets/svg/menu-arrows/dropdown-arrow-hover.svg");
+}
+
+combobox:disabled arrow {
+    -gtk-icon-source: url("../assets/svg/menu-arrows/dropdown-arrow-insensitive.svg");
+}
+
+/* Menus */
+
+menubar {
+    padding: 2px;
+    background-color: @theme_bg_color;
+    color: @theme_fg_color;
+}
+
+menubar > menuitem {
+    min-height: 16px;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+menubar > menuitem:hover {
+    background-color: @fog_grey;
+    color: @fog_light;
+}
+
+menubar > menuitem:disabled {
+    color: @insensitive_fg_color;
+}
+
+menu {
+    margin: 4px;
+    padding: 6px 0;
+    border: 1px solid @borders;
+    border-radius: 6px;
+    background-color: @theme_bg_color;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+menu menuitem {
+    min-height: 18px;
+    min-width: 40px;
+    padding: 6px 12px;
+    color: @theme_fg_color;
+}
+
+menu menuitem:hover {
+    background-color: @fog_grey;
+    color: @fog_light;
+}
+
+menu menuitem:disabled {
+    color: @insensitive_fg_color;
+}
+
+menu separator {
+    min-height: 1px;
+    margin: 4px 8px;
+    background-color: @borders;
+}
+
+menu arrow {
+    min-height: 16px;
+    min-width: 16px;
+}
+
+menu menuitem arrow.right {
+    -gtk-icon-source: url("../assets/svg/menu-arrows/menu-arrow-right.svg");
+}
+
+menu menuitem:hover arrow.right {
+    -gtk-icon-source: url("../assets/svg/menu-arrows/menu-arrow-right-hover.svg");
+}
+
+menu menuitem:disabled arrow.right {
+    -gtk-icon-source: url("../assets/svg/menu-arrows/menu-arrow-right-insensitive.svg");
+}
+
+/* Tooltips */
+
+tooltip {
+    padding: 6px 10px;
+    border: 1px solid @mid_grey;
+    border-radius: 4px;
+    background-color: alpha(@deep_shadow, 0.95);
+    color: @fog_light;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+tooltip.background {
+    background-color: alpha(@deep_shadow, 0.95);
+    background-clip: padding-box;
+}
+
+tooltip decoration {
+    background-color: transparent;
+}
+
+tooltip label {
+    color: @fog_light;
+}
+
+/* Notebooks and Tabs */
+
+notebook {
+    padding: 0;
+}
+
+notebook > header {
+    padding: 2px;
+    background-color: @theme_bg_color;
+}
+
+notebook > header tabs {
+    margin: 0;
+}
+
+notebook > header.top tabs {
+    border-bottom: 1px solid @borders;
+}
+
+notebook > header.bottom tabs {
+    border-top: 1px solid @borders;
+}
+
+notebook > header.left tabs {
+    border-right: 1px solid @borders;
+}
+
+notebook > header.right tabs {
+    border-left: 1px solid @borders;
+}
+
+notebook tab {
+    min-height: 32px;
+    min-width: 32px;
+    padding: 6px 12px;
+    border: 1px solid transparent;
+    background-color: transparent;
+    color: @theme_fg_color;
+    transition: all 200ms ease;
+}
+
+notebook tab:hover {
+    background-color: alpha(@fog_grey, 0.5);
+}
+
+notebook tab:checked {
+    background-color: @forest_green;
+    border-color: @sunset_orange;
+    color: @fog_light;
+}
+
+notebook tab:disabled {
+    color: @insensitive_fg_color;
+}
+
+notebook tab button {
+    min-height: 18px;
+    min-width: 18px;
+    padding: 2px;
+    margin: 0;
+    border-radius: 9px;
+}
+
+/* Frames */
+
+frame > border {
+    border: 1px solid @borders;
+    border-radius: 4px;
+}
+
+frame > border.flat {
+    border: none;
+}
+
+/* Separators */
+
+separator {
+    background-color: @borders;
+    min-width: 1px;
+    min-height: 1px;
+}
+
+separator.horizontal {
+    min-height: 1px;
+}
+
+separator.vertical {
+    min-width: 1px;
+}
+
+/* Toolbars */
+
+toolbar {
+    padding: 4px;
+    background-color: @theme_bg_color;
+    border-bottom: 1px solid @borders;
+}
+
+toolbar button {
+    margin: 2px;
+}
+
+toolbar separator {
+    margin: 4px;
+}
+
+.inline-toolbar {
+    padding: 4px;
+    border-top: 1px solid @borders;
+    background-color: shade(@theme_bg_color, 0.95);
+}
+
+/* Headerbars */
+
+headerbar {
+    min-height: 26px;
+    padding: 0 4px;
+    border-bottom: 1px solid @borders;
+    background-color: @theme_bg_color;
+    color: @theme_fg_color;
+}
+
+headerbar:backdrop {
+    background-color: shade(@theme_bg_color, 0.95);
+    color: @insensitive_fg_color;
+}
+
+headerbar .title {
+    font-weight: bold;
+    padding: 0 6px;
+    font-size: 9pt;
+}
+
+headerbar .subtitle {
+    font-size: 8pt;
+    padding: 0 6px;
+    color: @mist;
+}
+
+headerbar button {
+    margin: 2px 1px;
+    padding: 2px 4px;
+    min-height: 18px;
+}
+
+/* Window Controls */
+
+headerbar button.titlebutton.close,
+headerbar button.titlebutton.maximize,
+headerbar button.titlebutton.minimize,
+.titlebar button.titlebutton.close,
+.titlebar button.titlebutton.maximize,
+.titlebar button.titlebutton.minimize,
+headerbar button.titlebutton.close:active,
+headerbar button.titlebutton.maximize:active,
+headerbar button.titlebutton.minimize:active,
+.titlebar button.titlebutton.close:active,
+.titlebar button.titlebutton.maximize:active,
+.titlebar button.titlebutton.minimize:active {
+    min-width: 14px;
+    min-height: 14px;
+    padding: 0;
+    margin: 0 1px;
+    border: none;
+    border-width: 0;
+    border-radius: 0;
+    color: transparent;
+    background-color: transparent;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: none;
+    -gtk-icon-shadow: none;
+}
+
+headerbar button.titlebutton.close,
+.titlebar button.titlebutton.close,
+headerbar button.titlebutton.close:active,
+.titlebar button.titlebutton.close:active {
+    background-image: url("assets/close.svg");
+}
+
+headerbar button.titlebutton.close:hover,
+.titlebar button.titlebutton.close:hover {
+    background-image: url("assets/close-glow.svg");
+}
+
+headerbar button.titlebutton.close:backdrop,
+.titlebar button.titlebutton.close:backdrop {
+    background-image: url("assets/close.svg");
+}
+
+headerbar button.titlebutton.maximize,
+.titlebar button.titlebutton.maximize,
+headerbar button.titlebutton.maximize:active,
+.titlebar button.titlebutton.maximize:active {
+    background-image: url("assets/maximize.svg");
+}
+
+headerbar button.titlebutton.maximize:hover,
+.titlebar button.titlebutton.maximize:hover {
+    background-image: url("assets/maximize-glow.svg");
+}
+
+headerbar button.titlebutton.maximize:backdrop,
+.titlebar button.titlebutton.maximize:backdrop {
+    background-image: url("assets/maximize.svg");
+}
+
+headerbar button.titlebutton.minimize,
+.titlebar button.titlebutton.minimize,
+headerbar button.titlebutton.minimize:active,
+.titlebar button.titlebutton.minimize:active {
+    background-image: url("assets/minimize.svg");
+}
+
+headerbar button.titlebutton.minimize:hover,
+.titlebar button.titlebutton.minimize:hover {
+    background-image: url("assets/minimize-glow.svg");
+}
+
+headerbar button.titlebutton.minimize:backdrop,
+.titlebar button.titlebutton.minimize:backdrop {
+    background-image: url("assets/minimize.svg");
+}
+
+/* Treeviews and Lists */
+
+treeview.view {
+    background-color: @theme_base_color;
+    color: @theme_text_color;
+}
+
+scrolledwindow.frame treeview.view {
+    border: none;
+}
+
+treeview.view:selected,
+treeview.view:selected:focus {
+    background-color: @forest_green;
+    color: @theme_selected_fg_color;
+}
+
+treeview.view:hover {
+    background-color: alpha(@fog_grey, 0.3);
+}
+
+treeview.view header button {
+    padding: 4px 8px;
+    border: none;
+    border-bottom: 1px solid @borders;
+    border-radius: 0;
+    background-color: @theme_bg_color;
+    color: @theme_fg_color;
+}
+
+treeview.view header button:hover {
+    background-color: @fog_grey;
+}
+
+treeview.view header button:active {
+    background-color: shade(@theme_bg_color, 0.9);
+}
+
+treeview.view separator {
+    min-height: 2px;
+    color: @borders;
+}
+
+/* Popovers */
+
+popover {
+    margin: 8px;
+    padding: 8px;
+    border: 1px solid @borders;
+    border-radius: 6px;
+    background-color: @theme_bg_color;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+popover separator {
+    margin: 4px 0;
+}
+
+popover list {
+    background-color: transparent;
+}
+
+popover list row {
+    padding: 6px 12px;
+    border-radius: 4px;
+}
+
+popover list row:hover {
+    background-color: @fog_grey;
+}
+
+/* Expanders */
+
+expander arrow {
+    min-width: 16px;
+    min-height: 16px;
+    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+    transition: all 200ms ease;
+}
+
+expander arrow:checked {
+    -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+}
+
+expander arrow:hover {
+    color: @sunset_orange;
+}
+
+/* Levelbar */
+
+levelbar block {
+    min-width: 32px;
+    min-height: 8px;
+    border-radius: 2px;
+}
+
+levelbar block.filled {
+    background-color: @sunset_orange;
+}
+
+levelbar block.empty {
+    background-color: @borders;
+}
+
+levelbar.horizontal.discrete block {
+    margin: 0 1px;
+}
+
+levelbar.vertical.discrete block {
+    margin: 1px 0;
+}
+
+/* Dialogs */
+
+dialog {
+    background-color: @theme_bg_color;
+    color: @theme_fg_color;
+}
+
+dialog .dialog-action-area {
+    padding: 12px;
+    border-top: 1px solid @borders;
+}
+
+messagedialog .dialog-action-area {
+    padding: 8px;
+}
+
+messagedialog.background {
+    background-color: @theme_bg_color;
+}
+
+/* Sidebars */
+
+.sidebar {
+    background-color: shade(@theme_bg_color, 0.95);
+    border-right: 1px solid @borders;
+}
+
+.sidebar row {
+    padding: 8px 12px;
+}
+
+.sidebar row:hover {
+    background-color: alpha(@fog_grey, 0.5);
+}
+
+.sidebar row:selected {
+    background-color: @forest_green;
+    color: @theme_selected_fg_color;
+}
+
+/* Context Menus */
+
+.context-menu {
+    background-color: @theme_bg_color;
+    border: 1px solid @borders;
+    border-radius: 6px;
+}
+
+/* Links */
+
+*:link {
+    color: @link_color;
+}
+
+*:link:hover {
+    color: @sunset_glow;
+}
+
+*:visited {
+    color: @visited_link_color;
+}
+
+button.link {
+    color: @link_color;
+    border: none;
+    background: none;
+    text-decoration: underline;
+}
+
+button.link:hover {
+    color: @sunset_glow;
+}
+
+/* Calendar */
+
+calendar {
+    padding: 4px;
+    background-color: @theme_bg_color;
+    color: @theme_fg_color;
+}
+
+calendar.header {
+    background-color: @theme_bg_color;
+    border-bottom: 1px solid @borders;
+}
+
+calendar.button {
+    padding: 4px;
+}
+
+calendar.button:hover {
+    background-color: @fog_grey;
+}
+
+calendar:selected {
+    background-color: @sunset_orange;
+    color: @deep_shadow;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+calendar:indeterminate {
+    color: @mid_grey;
+}
+
+/* Scrolled Windows */
+
+scrolledwindow {
+    background-color: @theme_base_color;
+}
+
+scrolledwindow viewport {
+    background-color: @theme_base_color;
+}
+
+scrolledwindow.frame {
+    border: 1px solid @borders;
+    border-radius: 4px;
+}
+
+/* Placeholders */
+
+.placeholder {
+    color: @mid_grey;
+}
+
+/* Selections */
+
+selection {
+    background-color: @sunset_orange;
+    color: @deep_shadow;
+}
+
+/* Application Imports */
+
+@import url("apps/cinnamon-applications.css");
+@import url("apps/nemo.css");
+
+terminal-window notebook header {
+    background-color: @theme_bg_color;
+}
+
+.gedit-bottom-panel-paned {
+    background-color: @theme_bg_color;
+}
+
+rubberband,
+.rubberband {
+    border: 1px solid @sunset_orange;
+    background-color: alpha(@sunset_orange, 0.3);
+}
+
+/* Animations */
+
+@keyframes pulse {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0.6;
+    }
+}
+
+spinner {
+    background-image: none;
+    opacity: 0;
+    -gtk-icon-source: -gtk-icontheme("process-working-symbolic");
+    animation: pulse 1s linear infinite;
+}
+
+spinner:checked {
+    opacity: 1;
+}

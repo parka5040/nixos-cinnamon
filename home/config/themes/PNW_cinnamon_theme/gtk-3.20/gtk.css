@@ -1,0 +1,545 @@
+/* GTK 3.20+ Theme - Import GTK3 base */
+
+@import url("../gtk-3.0/gtk.css");
+
+/* GTK4 Specific Overrides */
+
+window.csd {
+    border-radius: 8px 8px 0 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+window.csd:backdrop {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+window.solid-csd {
+    border-radius: 0;
+    box-shadow: none;
+}
+
+headerbar {
+    background-color: @theme_bg_color;
+    color: @theme_fg_color;
+    min-height: 42px;
+    padding: 0 8px;
+}
+
+headerbar:backdrop {
+    background-color: shade(@theme_bg_color, 0.95);
+}
+
+windowhandle {
+    background-color: transparent;
+}
+
+/* Stack Switcher */
+
+stackswitcher button {
+    margin: 0;
+    border-radius: 0;
+}
+
+stackswitcher button:first-child {
+    border-radius: 4px 0 0 4px;
+}
+
+stackswitcher button:last-child {
+    border-radius: 0 4px 4px 0;
+}
+
+stackswitcher button:only-child {
+    border-radius: 4px;
+}
+
+/* ListView */
+
+listview {
+    background-color: @theme_base_color;
+    color: @theme_text_color;
+}
+
+listview row {
+    padding: 8px;
+    border-radius: 4px;
+}
+
+listview row:hover {
+    background-color: alpha(@fog_grey, 0.3);
+}
+
+listview row:selected {
+    background-color: @forest_green;
+    color: @theme_selected_fg_color;
+}
+
+/* ColumnView */
+
+columnview {
+    background-color: @theme_base_color;
+    color: @theme_text_color;
+}
+
+columnview row {
+    padding: 4px;
+}
+
+columnview row:hover {
+    background-color: alpha(@fog_grey, 0.3);
+}
+
+columnview row:selected {
+    background-color: @forest_green;
+    color: @theme_selected_fg_color;
+}
+
+columnview header {
+    background-color: @theme_bg_color;
+    border-bottom: 1px solid @borders;
+}
+
+columnview header button {
+    padding: 6px 12px;
+    border: none;
+    border-right: 1px solid @borders;
+    border-radius: 0;
+    background-color: transparent;
+}
+
+columnview header button:hover {
+    background-color: @fog_grey;
+}
+
+columnview header button:active {
+    background-color: shade(@theme_bg_color, 0.9);
+}
+
+/* Dropdown */
+
+dropdown {
+    background-color: @theme_bg_color;
+    border: 1px solid @borders;
+    border-radius: 4px;
+}
+
+dropdown button {
+    padding: 6px 12px;
+}
+
+dropdown button arrow {
+    min-height: 16px;
+    min-width: 16px;
+    -gtk-icon-source: url("../assets/svg/menu-arrows/dropdown-arrow.svg");
+}
+
+dropdown:hover button arrow {
+    -gtk-icon-source: url("../assets/svg/menu-arrows/dropdown-arrow-hover.svg");
+}
+
+dropdown popover {
+    padding: 0;
+}
+
+dropdown popover listview {
+    margin: 6px 0;
+}
+
+dropdown popover listview row {
+    padding: 8px 12px;
+}
+
+/* Search Entry */
+
+searchentry {
+    border: 1px solid @borders;
+    border-radius: 4px;
+    background-color: @theme_base_color;
+}
+
+searchentry:focus-within {
+    border-color: @sunset_orange;
+    box-shadow: 0 0 0 1px alpha(@sunset_glow, 0.4);
+}
+
+/* Password Entry */
+
+passwordentry {
+    border: 1px solid @borders;
+    border-radius: 4px;
+    background-color: @theme_base_color;
+}
+
+passwordentry:focus-within {
+    border-color: @sunset_orange;
+    box-shadow: 0 0 0 1px alpha(@sunset_glow, 0.4);
+}
+
+/* Picture and Video */
+
+picture {
+    background-color: transparent;
+}
+
+video {
+    background-color: @deep_shadow;
+    border-radius: 4px;
+}
+
+.media-controls {
+    background-color: alpha(@deep_shadow, 0.95);
+    border-radius: 6px;
+    padding: 8px;
+}
+
+.media-controls button {
+    margin: 2px;
+}
+
+/* Scroll Effects */
+
+scrolledwindow overshoot.top {
+    background-image: linear-gradient(to bottom,
+                                      alpha(@sunset_orange, 0.3),
+                                      transparent 50%);
+}
+
+scrolledwindow overshoot.bottom {
+    background-image: linear-gradient(to top,
+                                      alpha(@sunset_orange, 0.3),
+                                      transparent 50%);
+}
+
+scrolledwindow overshoot.left {
+    background-image: linear-gradient(to right,
+                                      alpha(@sunset_orange, 0.3),
+                                      transparent 50%);
+}
+
+scrolledwindow overshoot.right {
+    background-image: linear-gradient(to left,
+                                      alpha(@sunset_orange, 0.3),
+                                      transparent 50%);
+}
+
+scrolledwindow undershoot.top {
+    background-image: linear-gradient(to bottom,
+                                      alpha(@borders, 0.5),
+                                      transparent 4px);
+}
+
+scrolledwindow undershoot.bottom {
+    background-image: linear-gradient(to top,
+                                      alpha(@borders, 0.5),
+                                      transparent 4px);
+}
+
+scrolledwindow undershoot.left {
+    background-image: linear-gradient(to right,
+                                      alpha(@borders, 0.5),
+                                      transparent 4px);
+}
+
+scrolledwindow undershoot.right {
+    background-image: linear-gradient(to left,
+                                      alpha(@borders, 0.5),
+                                      transparent 4px);
+}
+
+/* Toast */
+
+toast {
+    margin: 12px;
+    padding: 12px;
+    border-radius: 6px;
+    background-color: alpha(@deep_shadow, 0.95);
+    color: @fog_light;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+toast button {
+    margin-left: 12px;
+}
+
+/* Status Page */
+
+statuspage {
+    background-color: @theme_bg_color;
+}
+
+statuspage > scrolledwindow > viewport > box {
+    margin: 36px 12px;
+}
+
+statuspage > scrolledwindow > viewport > box > clamp > box {
+    margin: 24px;
+}
+
+/* About Dialog */
+
+window.aboutdialog {
+    background-color: @theme_bg_color;
+}
+
+window.aboutdialog image.large-icons {
+    min-width: 128px;
+    min-height: 128px;
+}
+
+/* Assistant */
+
+assistant .sidebar {
+    background-color: shade(@theme_bg_color, 0.95);
+    border-right: 1px solid @borders;
+}
+
+assistant .sidebar label {
+    padding: 8px 16px;
+}
+
+assistant .sidebar label.highlight {
+    background-color: @forest_green;
+    color: @theme_selected_fg_color;
+}
+
+/* Color Dialog */
+
+colorswatch {
+    border: 1px solid @borders;
+    border-radius: 4px;
+}
+
+colorswatch overlay {
+    border-radius: 4px;
+}
+
+colorswatch:hover {
+    border-color: @sunset_orange;
+    box-shadow: 0 0 0 1px alpha(@sunset_glow, 0.4);
+}
+
+colorswatch:selected {
+    border-color: @sunset_orange;
+    box-shadow: 0 0 0 2px @sunset_glow;
+}
+
+/* Font Dialog */
+
+fontchooser .view {
+    background-color: @theme_base_color;
+}
+
+fontchooser .view:selected {
+    background-color: @forest_green;
+    color: @theme_selected_fg_color;
+}
+
+/* File Chooser */
+
+filechooser {
+    background-color: @theme_bg_color;
+}
+
+filechooser .path-bar {
+    background-color: shade(@theme_bg_color, 0.95);
+    border-bottom: 1px solid @borders;
+}
+
+filechooser .path-bar button {
+    margin: 2px;
+}
+
+filechooser placesview {
+    background-color: @theme_base_color;
+}
+
+filechooser placesview row {
+    padding: 8px;
+}
+
+filechooser placesview row:hover {
+    background-color: alpha(@fog_grey, 0.3);
+}
+
+filechooser placesview row:selected {
+    background-color: @forest_green;
+    color: @theme_selected_fg_color;
+}
+
+/* Print Dialog */
+
+printdialog {
+    background-color: @theme_bg_color;
+}
+
+printdialog paper {
+    background-color: white;
+    border: 1px solid @borders;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* App Chooser */
+
+appchooser button {
+    padding: 8px;
+}
+
+appchooser button:hover {
+    background-color: @fog_grey;
+}
+
+appchooser button:selected {
+    background-color: @forest_green;
+    color: @theme_selected_fg_color;
+}
+
+/* Infobar */
+
+infobar {
+    background-color: @theme_bg_color;
+    border: 1px solid @borders;
+    border-radius: 6px;
+    padding: 8px;
+    margin: 8px;
+}
+
+infobar.info {
+    background-color: alpha(#7a9bb5, 0.3);
+    border-color: #7a9bb5;
+}
+
+infobar.question {
+    background-color: alpha(@sunset_orange, 0.3);
+    border-color: @sunset_orange;
+}
+
+infobar.warning {
+    background-color: alpha(@warning_color, 0.3);
+    border-color: @warning_color;
+}
+
+infobar.error {
+    background-color: alpha(@error_color, 0.3);
+    border-color: @error_color;
+}
+
+/* Revealer */
+
+revealer {
+    transition: all 200ms ease;
+}
+
+/* Action Bar */
+
+actionbar {
+    padding: 8px;
+    border-top: 1px solid @borders;
+    background-color: shade(@theme_bg_color, 0.95);
+}
+
+actionbar button {
+    margin: 2px;
+}
+
+/* Search Bar */
+
+searchbar {
+    padding: 8px;
+    border-bottom: 1px solid @borders;
+    background-color: shade(@theme_bg_color, 0.95);
+}
+
+searchbar entry {
+    margin: 0 8px;
+}
+
+/* Shortcuts Window */
+
+shortcutswindow {
+    background-color: @theme_bg_color;
+}
+
+shortcutswindow .shortcuts {
+    background-color: transparent;
+}
+
+shortcutswindow .keycap {
+    min-width: 20px;
+    min-height: 24px;
+    padding: 3px 6px;
+    border: 1px solid @borders;
+    border-radius: 4px;
+    background-color: @theme_bg_color;
+    color: @theme_fg_color;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Emoji Chooser */
+
+emojichooser {
+    background-color: @theme_bg_color;
+}
+
+emojichooser .emoji {
+    min-width: 32px;
+    min-height: 32px;
+    padding: 4px;
+}
+
+emojichooser .emoji:hover {
+    background-color: @fog_grey;
+    border-radius: 4px;
+}
+
+emojichooser .emoji:selected {
+    background-color: @forest_green;
+    border-radius: 4px;
+}
+
+/* Focus Visible */
+
+*:focus-visible {
+    outline-color: @sunset_orange;
+    outline-style: solid;
+    outline-offset: -2px;
+    outline-width: 2px;
+}
+
+/* Drag and Drop */
+
+dnd {
+    background-color: alpha(@forest_green, 0.9);
+    border: 1px solid @sunset_orange;
+    border-radius: 4px;
+    padding: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Application Specific */
+
+window.nautilus {
+    background-color: @theme_bg_color;
+}
+
+window.nautilus .sidebar {
+    background-color: shade(@theme_bg_color, 0.95);
+}
+
+window.nautilus .sidebar row:selected {
+    background-color: @forest_green;
+}
+
+window.org-gnome-TextEditor {
+    background-color: @theme_bg_color;
+}
+
+window.org-gnome-TextEditor .editor {
+    background-color: @theme_base_color;
+}
+
+window.org-gnome-Builder {
+    background-color: @theme_bg_color;
+}
+
+window.org-gnome-Builder .sidebar {
+    background-color: shade(@theme_bg_color, 0.95);
+}

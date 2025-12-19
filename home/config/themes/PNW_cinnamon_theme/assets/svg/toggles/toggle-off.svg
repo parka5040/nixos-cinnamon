@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36" height="18" viewBox="0 0 36 18" xmlns="http://www.w3.org/2000/svg">
+  <g id="toggle-off">
+    <!-- Toggle track - grey for off state -->
+    <rect x="1" y="1" width="34" height="16" rx="8" ry="8"
+          fill="#3d4d5c"
+          stroke="#505d6d"
+          stroke-width="1"/>
+    <!-- Toggle thumb/handle - left position for off state -->
+    <circle cx="9" cy="9" r="6"
+            fill="#65737e"
+            stroke="#505d6d"
+            stroke-width="1"/>
+  </g>
+</svg>

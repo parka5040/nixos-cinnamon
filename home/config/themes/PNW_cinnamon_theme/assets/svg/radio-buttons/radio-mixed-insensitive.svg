@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+  <g id="radio-mixed-insensitive" opacity="0.4">
+    <!-- Disabled circular radio button background -->
+    <circle cx="8" cy="8" r="7"
+            fill="#2b3339"
+            stroke="#65737e"
+            stroke-width="1"/>
+    <!-- Faded horizontal line -->
+    <path d="M 5,8 L 11,8"
+          stroke="#65737e"
+          stroke-width="2"
+          stroke-linecap="round"
+          fill="none"/>
+  </g>
+</svg>

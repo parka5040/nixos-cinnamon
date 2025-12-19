@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Subtle glow for hover state -->
+    <filter id="hover-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="0.5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <g id="radio-unchecked-hover">
+    <!-- Filled circular radio button with hover highlight -->
+    <circle cx="8" cy="8" r="6.5"
+            fill="#3d4d5c"
+            stroke="#d4977d"
+            stroke-width="1.5"
+            filter="url(#hover-glow)"/>
+  </g>
+</svg>

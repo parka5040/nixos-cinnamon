@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16" height="48" viewBox="0 0 16 48" xmlns="http://www.w3.org/2000/svg">
+  <g id="scrollbar-slider-vertical-hover">
+    <!-- Vertical scrollbar slider/thumb (hover state) -->
+    <rect x="4" y="2" width="8" height="44" rx="4"
+          fill="#65737e"
+          stroke="#eff1f3"
+          stroke-width="1"/>
+  </g>
+</svg>

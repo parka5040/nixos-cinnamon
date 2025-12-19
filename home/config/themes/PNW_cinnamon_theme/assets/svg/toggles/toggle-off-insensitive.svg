@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36" height="18" viewBox="0 0 36 18" xmlns="http://www.w3.org/2000/svg">
+  <g id="toggle-off-insensitive" opacity="0.4">
+    <!-- Disabled toggle track -->
+    <rect x="1" y="1" width="34" height="16" rx="8" ry="8"
+          fill="#2b3339"
+          stroke="#65737e"
+          stroke-width="1"/>
+    <!-- Disabled toggle thumb -->
+    <circle cx="9" cy="9" r="6"
+            fill="#65737e"
+            stroke="#505d6d"
+            stroke-width="1"/>
+  </g>
+</svg>
