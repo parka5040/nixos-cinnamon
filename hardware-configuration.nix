@@ -8,28 +8,21 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "usb_storage" "sd_mod" ];
+  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "usb_storage" "uas" "usbhid" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/7382e40e-bc64-4d67-b03c-0821f2ff181e";
+    { device = "/dev/disk/by-uuid/1d51b16d-d02e-45a8-8984-d307d5df6d9f";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/30BA-503B";
+    { device = "/dev/disk/by-uuid/4AF5-E793";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
-
-  # This was manually added after manual install of an NVME SSD, delete on copy
-  fileSystems."/mnt/storage" = {
-  device = "/dev/disk/by-uuid/9a356333-80f1-44d5-b2fd-0332c1db725e";
-  fsType = "btrfs";
-  options = [ "compress=zstd" "noatime" ];
-  };
 
   swapDevices = [ ];
 

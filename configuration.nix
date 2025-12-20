@@ -14,6 +14,8 @@ let
       cp -r . $out/share/themes/PNW_cinnamon_theme/
     '';
   };
+
+  stable = import <nixos-stable> { config = config.nixpkgs.config; };
 in
 {
   imports = [
@@ -179,15 +181,6 @@ in
   # Enable zsh system-wide (required for user shell)
   programs.zsh.enable = true;
 
-  # Storage drive directory structure
-  systemd.tmpfiles.rules = [
-    "d /mnt/storage 0755 tonix users -"
-    "d /mnt/storage/SteamLibrary 0755 tonix users -"
-    "d /mnt/storage/Games 0755 tonix users -"
-    "d /mnt/storage/Mods 0755 tonix users -"
-    "d /mnt/storage/Archives 0755 tonix users -"
-  ];
-
   # Home Manager
   home-manager = {
     useGlobalPkgs = true;
@@ -217,6 +210,7 @@ in
   };
 
   # Mullvad VPN
+  services.mullvad-vpn.package = stable.mullvad-vpn;
   services.mullvad-vpn.enable = true;
 
   # Allow unfree packages (required for NVIDIA drivers)
@@ -273,7 +267,7 @@ in
     tree
 
     # VPN
-    mullvad-vpn
+    stable.mullvad-vpn
 
     # Communication
     telegram-desktop
