@@ -307,11 +307,6 @@ in
         Categories=Games;
       '';
     };
-
-    # Symlinks for nvme1n1
-    "SteamLibrary".source = config.lib.file.mkOutOfStoreSymlink "/mnt/storage/SteamLibrary";
-    "Games".source = config.lib.file.mkOutOfStoreSymlink "/mnt/storage/Games";
-    "Mods".source = config.lib.file.mkOutOfStoreSymlink "/mnt/storage/Mods";
   };
 
   # Git
