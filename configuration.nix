@@ -106,7 +106,9 @@ in
     package = config.boot.kernelPackages.nvidiaPackages.production;
 
     prime = {
-      offload.enable = false;
+      offload.enable = true;
+      offload.enableOffloadCmd = true;
+
       reverseSync.enable = false;
       sync.enable = false;
       amdgpuBusId = "PCI:6:0:0";
