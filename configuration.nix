@@ -79,6 +79,43 @@ in
       clock-format=%A, %B %e %H:%M:%S
     '';
   };
+  # Add this section for explicit NVIDIA display configuration
+  services.xserver.screenSection = ''
+    Option "metamodes" "nvidia-auto-select +0+0 {ForceFullCompositionPipeline=On}"
+    Option "AllowIndirectGLXProtocol" "off"
+    Option "TripleBuffer" "on"
+  '';
+
+  services.xserver.config = ''
+    Section "ServerLayout"
+        Identifier "layout"
+        Screen 0 "nvidia"
+        Inactive "amd"
+    EndSection
+
+    Section "Device"
+        Identifier "nvidia"
+        Driver "nvidia"
+        BusID "PCI:1:0:0"
+        Option "AllowEmptyInitialConfiguration"
+    EndSection
+
+    Section "Device"
+        Identifier "amd"
+        Driver "amdgpu"
+        BusID "PCI:5:0:0"
+    EndSection
+
+    Section "Screen"
+        Identifier "nvidia"
+        Device "nvidia"
+    EndSection
+
+    Section "Screen"
+        Identifier "amd"
+        Device "amd"
+    EndSection
+  '';
 
   # Exclude Cinnamon default apps
   environment.cinnamon.excludePackages = with pkgs; [
