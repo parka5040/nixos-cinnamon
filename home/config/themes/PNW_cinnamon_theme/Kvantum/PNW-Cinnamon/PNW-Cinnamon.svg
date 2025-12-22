@@ -1,60 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-  PNW Cinnamon Kvantum Theme SVG Elements
-  This file defines graphical elements used by the Kvantum theme engine
-  Colors match the Pacific Northwest palette
--->
-<svg width="200" height="800" xmlns="http://www.w3.org/2000/svg">
+<svg width="200" height="900" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <defs>
-    <!-- Pacific Northwest Color Palette -->
     <style type="text/css">
-      .forest-green { fill: #4a5f5a; }
-      .fog-grey { fill: #505d6d; }
-      .storm-blue { fill: #3d4d5c; }
-      .mist { fill: #c5d0d9; }
+      /* PNW Cozy Theme - Stone Grey Palette */
+      /* Backgrounds - warm stone greys */
+      .stone-deep { fill: #18191a; }
+      .stone-dark { fill: #1e2022; }
+      .stone-mid { fill: #26282b; }
+      .stone-light { fill: #2e3134; }
+
+      /* Mist - transitional tones */
+      .mist-dark { fill: #3a3d40; }
+      .mist-mid { fill: #4d5154; }
+      .mist-light { fill: #5f6467; }
+      .fog { fill: #70767a; }
+
+      /* Forest - green accents */
+      .forest-deep { fill: #1f2a25; }
+      .forest-mid { fill: #2a3832; }
+      .forest-accent { fill: #354840; }
+      .moss { fill: #3d4f46; }
+
+      /* Sunset - warm accents */
+      .sunset-deep { fill: #5c4035; }
+      .sunset-glow { fill: #6d4d3d; }
+      .sunset-ember { fill: #7a5544; }
+      .sunset-soft { fill: #8b6350; }
       .sunset-orange { fill: #d4977d; }
-      .sunset-glow { fill: #e8b299; }
-      .deep-shadow { fill: #2b3339; }
-      .mid-grey { fill: #65737e; }
-      .fog-light { fill: #eff1f3; }
-      .border { fill: none; stroke: #2b3339; stroke-width: 1; }
+      .sunset-bright { fill: #e8b299; }
+      .cedar { fill: #a68a7b; }
+
+      /* Storm blue - stormy Pacific colors */
+      .storm-blue { fill: #3d4d5c; }
+      .twilight { fill: #2d3540; }
+
+      /* Text */
+      .text-primary { fill: #c9cbcc; }
+      .text-secondary { fill: #969a9c; }
+      .text-muted { fill: #6b7073; }
+
+      /* Borders */
+      .border-dark { fill: none; stroke: #18191a; stroke-width: 1; }
+      .border-stone { fill: none; stroke: #26282b; stroke-width: 1; }
+      .border-mist { fill: none; stroke: #3a3d40; stroke-width: 1; }
     </style>
   </defs>
 
   <!-- Button Normal -->
   <g id="button">
-    <rect class="storm-blue" x="0" y="0" width="100" height="32" rx="4"/>
-    <rect class="border" x="0" y="0" width="100" height="32" rx="4"/>
+    <rect class="stone-mid" x="0" y="0" width="100" height="32" rx="4"/>
+    <rect class="border-mist" x="0" y="0" width="100" height="32" rx="4"/>
   </g>
 
   <!-- Button Hover -->
   <g id="button-hover">
-    <rect class="fog-grey" x="0" y="40" width="100" height="32" rx="4"/>
-    <rect class="border" x="0" y="40" width="100" height="32" rx="4"/>
+    <rect class="mist-dark" x="0" y="40" width="100" height="32" rx="4"/>
+    <rect fill="none" stroke="#4d5154" stroke-width="1" x="0" y="40" width="100" height="32" rx="4"/>
   </g>
 
-  <!-- Button Pressed -->
+  <!-- Button Pressed/Active - forest green accent -->
   <g id="button-pressed">
-    <rect class="forest-green" x="0" y="80" width="100" height="32" rx="4"/>
-    <rect fill="none" stroke="#d4977d" stroke-width="1" x="0" y="80" width="100" height="32" rx="4"/>
+    <rect class="forest-accent" x="0" y="80" width="100" height="32" rx="4"/>
+    <rect fill="none" stroke="#3d4f46" stroke-width="1" x="0" y="80" width="100" height="32" rx="4"/>
+  </g>
+
+  <!-- Button Toggled - uses sunset accent -->
+  <g id="button-toggled">
+    <rect class="forest-mid" x="0" y="0" width="100" height="32" rx="4"/>
+    <rect fill="none" stroke="#7a5544" stroke-width="1" x="0" y="0" width="100" height="32" rx="4"/>
+  </g>
+
+  <!-- Button Toggled Hover -->
+  <g id="button-toggled-hover">
+    <rect class="forest-accent" x="0" y="0" width="100" height="32" rx="4"/>
+    <rect fill="none" stroke="#8b6350" stroke-width="1" x="0" y="0" width="100" height="32" rx="4"/>
   </g>
 
   <!-- Line Edit -->
   <g id="lineedit">
-    <rect class="deep-shadow" x="0" y="120" width="100" height="32" rx="4"/>
-    <rect class="border" x="0" y="120" width="100" height="32" rx="4"/>
+    <rect class="stone-deep" x="0" y="120" width="100" height="32" rx="4"/>
+    <rect class="border-stone" x="0" y="120" width="100" height="32" rx="4"/>
   </g>
 
-  <!-- Line Edit Focus -->
+  <!-- Line Edit Focus - sunset accent on focus -->
   <g id="lineedit-focus">
-    <rect class="deep-shadow" x="0" y="160" width="100" height="32" rx="4"/>
-    <rect fill="none" stroke="#d4977d" stroke-width="1" x="0" y="160" width="100" height="32" rx="4"/>
+    <rect class="stone-deep" x="0" y="160" width="100" height="32" rx="4"/>
+    <rect fill="none" stroke="#7a5544" stroke-width="1" x="0" y="160" width="100" height="32" rx="4"/>
   </g>
 
   <!-- Menu Background -->
   <g id="menu">
-    <rect class="storm-blue" x="0" y="200" width="150" height="100" rx="6"/>
-    <rect class="border" x="0" y="200" width="150" height="100" rx="6"/>
+    <rect class="stone-dark" x="0" y="200" width="150" height="100" rx="6"/>
+    <rect class="border-stone" x="0" y="200" width="150" height="100" rx="6"/>
   </g>
 
   <!-- Menu Item -->
@@ -64,139 +101,582 @@
 
   <!-- Menu Item Hover -->
   <g id="menuitem-hover">
-    <rect class="fog-grey" x="4" y="236" width="142" height="28" rx="4"/>
+    <rect class="stone-mid" x="4" y="236" width="142" height="28" rx="4"/>
   </g>
 
   <!-- Checkbox Unchecked -->
   <g id="checkbox">
-    <rect class="storm-blue" x="0" y="310" width="18" height="18" rx="3"/>
-    <rect class="border" x="0" y="310" width="18" height="18" rx="3"/>
+    <rect class="stone-mid" x="0" y="310" width="18" height="18" rx="3"/>
+    <rect class="border-mist" x="0" y="310" width="18" height="18" rx="3"/>
   </g>
 
-  <!-- Checkbox Checked (reference to shared asset) -->
+  <!-- Checkbox Checked - forest with sunset border -->
   <g id="checkbox-checked">
-    <rect class="storm-blue" x="20" y="310" width="18" height="18" rx="3"/>
-    <path class="sunset-orange" d="M 27 314 L 31 318 L 35 313" stroke="#d4977d" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect class="forest-accent" x="20" y="310" width="18" height="18" rx="3"/>
+    <rect fill="none" stroke="#7a5544" stroke-width="1" x="20" y="310" width="18" height="18" rx="3"/>
+    <path d="M 27 314 L 31 318 L 35 313" stroke="#c9cbcc" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Checkbox Hover -->
+  <g id="checkbox-hover">
+    <rect class="mist-dark" x="0" y="310" width="18" height="18" rx="3"/>
+    <rect fill="none" stroke="#4d5154" stroke-width="1" x="0" y="310" width="18" height="18" rx="3"/>
   </g>
 
   <!-- Radio Unchecked -->
   <g id="radio">
-    <circle class="storm-blue" cx="9" cy="348" r="9"/>
-    <circle class="border" cx="9" cy="348" r="9"/>
+    <circle class="stone-mid" cx="9" cy="348" r="9"/>
+    <circle class="border-mist" cx="9" cy="348" r="9"/>
   </g>
 
-  <!-- Radio Checked -->
+  <!-- Radio Checked - forest with sunset border -->
   <g id="radio-checked">
-    <circle class="storm-blue" cx="29" cy="348" r="9"/>
-    <circle class="border" cx="29" cy="348" r="9"/>
-    <circle class="sunset-orange" cx="29" cy="348" r="5"/>
+    <circle class="forest-accent" cx="29" cy="348" r="9"/>
+    <circle fill="none" stroke="#7a5544" stroke-width="1" cx="29" cy="348" r="9"/>
+    <circle class="text-primary" cx="29" cy="348" r="4"/>
   </g>
 
-  <!-- Scrollbar Slider -->
+  <!-- Scrollbar Slider - warm mist tones -->
   <g id="scrollbarslider">
-    <rect class="mid-grey" x="0" y="370" width="12" height="40" rx="6" opacity="0.5"/>
+    <rect class="mist-dark" x="0" y="370" width="12" height="40" rx="6" opacity="0.7"/>
   </g>
 
   <!-- Scrollbar Slider Hover -->
   <g id="scrollbarslider-hover">
-    <rect class="mid-grey" x="16" y="370" width="12" height="40" rx="6"/>
+    <rect class="mist-mid" x="16" y="370" width="12" height="40" rx="6"/>
   </g>
 
-  <!-- Slider Groove -->
+  <!-- Scrollbar Slider Pressed -->
+  <g id="scrollbarslider-pressed">
+    <rect class="mist-light" x="16" y="370" width="12" height="40" rx="6"/>
+  </g>
+
+  <!-- Slider Groove/Trough - deep shadow base -->
   <g id="slider">
-    <rect class="deep-shadow" x="0" y="420" width="100" height="4" rx="2"/>
+    <rect fill="#2b3339" x="0" y="0" width="100" height="4" rx="2"/>
   </g>
 
-  <!-- Slider Handle -->
+  <!-- Slider Groove Hover -->
+  <g id="slider-hover">
+    <rect fill="#3d4d5c" x="0" y="0" width="100" height="4" rx="2"/>
+  </g>
+
+  <!-- Slider Groove Fill/Progress - sunset orange -->
+  <g id="slider-fill">
+    <rect fill="#d4977d" x="0" y="0" width="50" height="4" rx="2"/>
+  </g>
+
+  <!-- Slider Groove Fill Hover - brighter sunset -->
+  <g id="slider-fill-hover">
+    <rect fill="#e8b299" x="0" y="0" width="50" height="4" rx="2"/>
+  </g>
+
+  <!-- Slider Groove Focused - with sunset glow outline -->
+  <g id="slider-focus">
+    <rect fill="#2b3339" x="0" y="0" width="100" height="4" rx="2"/>
+    <rect fill="none" stroke="#d4977d" stroke-width="1" x="0" y="0" width="100" height="4" rx="2"/>
+  </g>
+
+  <!-- Slider Handle - fog grey with subtle border -->
   <g id="slidercursor">
-    <circle class="fog-grey" cx="8" cy="444" r="8"/>
-    <circle fill="none" stroke="#65737e" stroke-width="1" cx="8" cy="444" r="8"/>
+    <circle fill="#505d6d" cx="8" cy="8" r="7"/>
+    <circle fill="none" stroke="#65737e" stroke-width="1" cx="8" cy="8" r="7"/>
+  </g>
+
+  <!-- Slider Handle Hover - lighter with sunset border -->
+  <g id="slidercursor-hover">
+    <circle fill="#65737e" cx="8" cy="8" r="7"/>
+    <circle fill="none" stroke="#d4977d" stroke-width="1.5" cx="8" cy="8" r="7"/>
+  </g>
+
+  <!-- Slider Handle Pressed - sunset filled -->
+  <g id="slidercursor-pressed">
+    <circle fill="#d4977d" cx="8" cy="8" r="7"/>
+    <circle fill="none" stroke="#e8b299" stroke-width="1" cx="8" cy="8" r="7"/>
+  </g>
+
+  <!-- Slider Handle Focused - fog with sunset glow -->
+  <g id="slidercursor-focused">
+    <circle fill="#505d6d" cx="8" cy="8" r="7"/>
+    <circle fill="none" stroke="#d4977d" stroke-width="2" cx="8" cy="8" r="7"/>
+  </g>
+
+  <!-- Slider Handle Toggled -->
+  <g id="slidercursor-toggled">
+    <circle fill="#d4977d" cx="8" cy="8" r="7"/>
+    <circle fill="none" stroke="#a68a7b" stroke-width="1" cx="8" cy="8" r="7"/>
   </g>
 
   <!-- Progress Bar Background -->
   <g id="progress">
-    <rect class="deep-shadow" x="0" y="460" width="100" height="8" rx="4"/>
+    <rect class="stone-deep" x="0" y="460" width="100" height="8" rx="4"/>
   </g>
 
-  <!-- Progress Bar Fill -->
+  <!-- Progress Bar Fill - sunset warm accent -->
   <g id="progress-pattern">
-    <rect class="sunset-orange" x="0" y="475" width="60" height="8" rx="4"/>
+    <rect class="sunset-ember" x="0" y="475" width="60" height="8" rx="4"/>
   </g>
 
-  <!-- Tab Inactive -->
+  <!-- Tab Inactive/Normal -->
   <g id="tab">
-    <rect fill="transparent" x="0" y="490" width="80" height="32" rx="4"/>
+    <rect class="stone-mid" x="0" y="0" width="80" height="32" rx="4" opacity="0.7"/>
   </g>
 
-  <!-- Tab Active -->
+  <!-- Tab Normal (explicit Kvantum naming) -->
+  <g id="tab-normal">
+    <rect fill="#26282b" x="0" y="0" width="80" height="32" rx="4" opacity="0.7"/>
+  </g>
+
+  <!-- Tab Focused - Kvantum uses this for hover on inactive tabs -->
+  <g id="tab-focused">
+    <rect fill="#3a3d40" x="0" y="0" width="80" height="32" rx="4"/>
+  </g>
+
+  <!-- Tab Pressed -->
+  <g id="tab-pressed">
+    <rect class="forest-deep" x="0" y="0" width="80" height="32" rx="4"/>
+    <rect fill="none" stroke="#354840" stroke-width="1" x="0" y="0" width="80" height="32" rx="4"/>
+  </g>
+
+  <!-- Tab Hover (legacy) -->
+  <g id="tab-hover">
+    <rect class="mist-dark" x="0" y="0" width="80" height="32" rx="4"/>
+  </g>
+
+  <!-- Tab Active - forest with subtle cedar border -->
   <g id="tab-active">
-    <rect class="forest-green" x="84" y="490" width="80" height="32" rx="4"/>
-    <rect fill="none" stroke="#d4977d" stroke-width="1" x="84" y="490" width="80" height="32" rx="4"/>
+    <rect fill="#2a3832" x="0" y="0" width="80" height="32" rx="4"/>
+    <rect fill="none" stroke="#8b6350" stroke-width="1" x="0" y="0" width="80" height="32" rx="4"/>
   </g>
 
-  <!-- Tab Close Button -->
-  <g id="tab-close">
-    <path d="M 3,3 L 11,11 M 11,3 L 3,11"
-          stroke="#c5d0d9"
-          stroke-width="1.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          fill="none"/>
+  <!-- Tab Active Hover -->
+  <g id="tab-active-hover">
+    <rect fill="#354840" x="0" y="0" width="80" height="32" rx="4"/>
+    <rect fill="none" stroke="#a68a7b" stroke-width="1" x="0" y="0" width="80" height="32" rx="4"/>
   </g>
 
-  <!-- Tab Close Button Hover -->
-  <g id="tab-close-hover">
-    <circle fill="rgba(193, 123, 110, 0.5)" cx="7" cy="7" r="8"/>
-    <path d="M 3,3 L 11,11 M 11,3 L 3,11"
-          stroke="#eff1f3"
-          stroke-width="1.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          fill="none"/>
+  <!-- Tab Active Focused - Kvantum uses this for active tab hover -->
+  <g id="tab-active-focused">
+    <rect fill="#354840" x="0" y="0" width="80" height="32" rx="4"/>
+    <rect fill="none" stroke="#a68a7b" stroke-width="1" x="0" y="0" width="80" height="32" rx="4"/>
   </g>
 
-  <!-- Tab Close Button Pressed -->
+  <!-- Tab Active Pressed -->
+  <g id="tab-active-pressed">
+    <rect fill="#2a3832" x="0" y="0" width="80" height="32" rx="4"/>
+    <rect fill="none" stroke="#a68a7b" stroke-width="1" x="0" y="0" width="80" height="32" rx="4"/>
+  </g>
+
+  <!-- Tab Close Button Normal - subtle, blends with tab -->
+  <g id="tab-close-normal">
+    <circle fill="#3a3d40" cx="8" cy="8" r="8" opacity="0.6"/>
+    <path d="M 5,5 L 11,11 M 11,5 L 5,11" stroke="#969a9c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+
+  <!-- Tab Close Button Focused/Hover - cedar accent -->
+  <g id="tab-close-focused">
+    <circle fill="#8b6350" cx="8" cy="8" r="8"/>
+    <path d="M 5,5 L 11,11 M 11,5 L 5,11" stroke="#c9cbcc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+
+  <!-- Tab Close Button Pressed - softer orange -->
   <g id="tab-close-pressed">
-    <circle fill="#c17b6e" cx="7" cy="7" r="8"/>
-    <path d="M 3,3 L 11,11 M 11,3 L 3,11"
-          stroke="#eff1f3"
-          stroke-width="1.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          fill="none"/>
+    <circle fill="#a68a7b" cx="8" cy="8" r="8"/>
+    <path d="M 5,5 L 11,11 M 11,5 L 5,11" stroke="#1e2022" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+
+  <!-- Tab Close Button Toggled (on active tab) -->
+  <g id="tab-close-toggled">
+    <circle fill="#3d4f46" cx="8" cy="8" r="8" opacity="0.7"/>
+    <path d="M 5,5 L 11,11 M 11,5 L 5,11" stroke="#969a9c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+
+  <!-- Tab Close Button Toggled Hover -->
+  <g id="tab-close-toggled-focused">
+    <circle fill="#8b6350" cx="8" cy="8" r="8"/>
+    <path d="M 5,5 L 11,11 M 11,5 L 5,11" stroke="#c9cbcc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+
+  <!-- Tab Close Button Disabled -->
+  <g id="tab-close-disabled">
+    <circle fill="#26282b" cx="8" cy="8" r="8" opacity="0.4"/>
+    <path d="M 5,5 L 11,11 M 11,5 L 5,11" stroke="#4d5154" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+
+  <!-- Tab Focus Frame - transparent/none to prevent blue focus -->
+  <g id="tab-focus">
+    <rect fill="transparent" x="0" y="0" width="80" height="32" rx="4"/>
+  </g>
+
+  <!-- Tab Focus Frame Hover -->
+  <g id="tab-focus-focused">
+    <rect fill="transparent" x="0" y="0" width="80" height="32" rx="4"/>
+  </g>
+
+  <!-- Tab Focus Frame Normal -->
+  <g id="tab-focus-normal">
+    <rect fill="transparent" x="0" y="0" width="80" height="32" rx="4"/>
+  </g>
+
+  <!-- Tab Selected Indicator - transparent (indicator is built into tab-toggled) -->
+  <g id="tab-indicator-normal">
+    <rect fill="transparent" x="0" y="0" width="80" height="3"/>
+  </g>
+
+  <!-- Tab Indicator Focused -->
+  <g id="tab-indicator-focused">
+    <rect fill="transparent" x="0" y="0" width="80" height="3"/>
+  </g>
+
+  <!-- Tab Indicator Pressed -->
+  <g id="tab-indicator-pressed">
+    <rect fill="transparent" x="0" y="0" width="80" height="3"/>
+  </g>
+
+  <!-- Tab Indicator Toggled - transparent (active tab styling in tab-toggled) -->
+  <g id="tab-indicator-toggled">
+    <rect fill="transparent" x="0" y="0" width="80" height="3"/>
+  </g>
+
+  <!-- Tab Active Focus - subtle cedar border -->
+  <g id="tab-active-focus">
+    <rect fill="#2a3832" x="0" y="0" width="80" height="32" rx="4"/>
+    <rect fill="none" stroke="#8b6350" stroke-width="1" x="0" y="0" width="80" height="32" rx="4"/>
+  </g>
+
+  <!-- Tab Toggled (active state) - subtle cedar border -->
+  <g id="tab-toggled">
+    <rect fill="#2a3832" x="0" y="0" width="80" height="32" rx="4"/>
+    <rect fill="none" stroke="#8b6350" stroke-width="1" x="0" y="0" width="80" height="32" rx="4"/>
+  </g>
+
+  <!-- Tab Toggled Hover (legacy) -->
+  <g id="tab-toggled-hover">
+    <rect fill="#354840" x="0" y="0" width="80" height="32" rx="4"/>
+    <rect fill="none" stroke="#a68a7b" stroke-width="1" x="0" y="0" width="80" height="32" rx="4"/>
+  </g>
+
+  <!-- Tab Toggled Focused - Kvantum uses this for active tab hover -->
+  <g id="tab-toggled-focused">
+    <rect fill="#354840" x="0" y="0" width="80" height="32" rx="4"/>
+    <rect fill="none" stroke="#a68a7b" stroke-width="1" x="0" y="0" width="80" height="32" rx="4"/>
+  </g>
+
+  <!-- Tab Toggled Pressed -->
+  <g id="tab-toggled-pressed">
+    <rect fill="#2a3832" x="0" y="0" width="80" height="32" rx="4"/>
+    <rect fill="none" stroke="#a68a7b" stroke-width="1" x="0" y="0" width="80" height="32" rx="4"/>
   </g>
 
   <!-- Toolbar -->
   <g id="toolbar">
-    <rect class="storm-blue" x="0" y="530" width="200" height="40"/>
-    <line stroke="#2b3339" stroke-width="1" x1="0" y1="569" x2="200" y2="569"/>
+    <rect class="stone-dark" x="0" y="530" width="200" height="40"/>
+    <line stroke="#18191a" stroke-width="1" x1="0" y1="569" x2="200" y2="569"/>
+  </g>
+
+  <!-- Toolbar Button Normal -->
+  <g id="tbutton">
+    <rect fill="transparent" x="0" y="0" width="32" height="32" rx="4"/>
+  </g>
+
+  <!-- Toolbar Button Normal (explicit) -->
+  <g id="tbutton-normal">
+    <rect fill="transparent" x="0" y="0" width="32" height="32" rx="4"/>
+  </g>
+
+  <!-- Toolbar Button Hover (legacy) -->
+  <g id="tbutton-hover">
+    <rect fill="#2a3832" x="0" y="0" width="32" height="32" rx="4"/>
+    <rect fill="none" stroke="#354840" stroke-width="1" x="0" y="0" width="32" height="32" rx="4"/>
+  </g>
+
+  <!-- Toolbar Button Focused - Kvantum uses this for hover -->
+  <g id="tbutton-focused">
+    <rect fill="#2a3832" x="0" y="0" width="32" height="32" rx="4"/>
+    <rect fill="none" stroke="#354840" stroke-width="1" x="0" y="0" width="32" height="32" rx="4"/>
+  </g>
+
+  <!-- Toolbar Button Pressed -->
+  <g id="tbutton-pressed">
+    <rect fill="#354840" x="0" y="0" width="32" height="32" rx="4"/>
+    <rect fill="none" stroke="#3d4f46" stroke-width="1" x="0" y="0" width="32" height="32" rx="4"/>
+  </g>
+
+  <!-- Toolbar Button Focus (keyboard) - transparent -->
+  <g id="tbutton-focus">
+    <rect fill="transparent" x="0" y="0" width="32" height="32" rx="4"/>
+  </g>
+
+  <!-- Toolbar Button Toggled -->
+  <g id="tbutton-toggled">
+    <rect fill="#354840" x="0" y="0" width="32" height="32" rx="4"/>
+    <rect fill="none" stroke="#3d4f46" stroke-width="1" x="0" y="0" width="32" height="32" rx="4"/>
+  </g>
+
+  <!-- Toolbar Button Toggled Hover (legacy) -->
+  <g id="tbutton-toggled-hover">
+    <rect fill="#3d4f46" x="0" y="0" width="32" height="32" rx="4"/>
+    <rect fill="none" stroke="#4a5f5a" stroke-width="1" x="0" y="0" width="32" height="32" rx="4"/>
+  </g>
+
+  <!-- Toolbar Button Toggled Focused - Kvantum uses this -->
+  <g id="tbutton-toggled-focused">
+    <rect fill="#3d4f46" x="0" y="0" width="32" height="32" rx="4"/>
+    <rect fill="none" stroke="#4a5f5a" stroke-width="1" x="0" y="0" width="32" height="32" rx="4"/>
   </g>
 
   <!-- Tooltip -->
   <g id="tooltip">
-    <rect fill="rgba(43, 51, 57, 0.95)" x="0" y="580" width="120" height="32" rx="4"/>
-    <rect fill="none" stroke="#65737e" stroke-width="1" x="0" y="580" width="120" height="32" rx="4"/>
+    <rect fill="#18191a" fill-opacity="0.95" x="0" y="580" width="120" height="32" rx="4"/>
+    <rect fill="none" stroke="#3a3d40" stroke-width="1" x="0" y="580" width="120" height="32" rx="4"/>
   </g>
 
   <!-- Item View -->
   <g id="itemview">
-    <rect class="deep-shadow" x="0" y="620" width="120" height="80" rx="4"/>
-    <rect class="border" x="0" y="620" width="120" height="80" rx="4"/>
+    <rect class="stone-deep" x="0" y="620" width="120" height="80" rx="4"/>
+    <rect class="border-stone" x="0" y="620" width="120" height="80" rx="4"/>
   </g>
 
-  <!-- Item View Selection -->
+  <!-- Item View Selection - softer cedar/forest highlight -->
   <g id="itemview-selected">
-    <rect class="forest-green" x="4" y="624" width="112" height="24" rx="2"/>
+    <rect fill="#2a3832" x="0" y="0" width="112" height="24" rx="2"/>
+    <rect fill="none" stroke="#a68a7b" stroke-width="1" x="0" y="0" width="112" height="24" rx="2"/>
   </g>
 
-  <!-- Focus Indicator -->
+  <!-- Item View Hover -->
+  <g id="itemview-hover">
+    <rect fill="#26282b" x="0" y="0" width="112" height="24" rx="2"/>
+  </g>
+
+  <!-- Item View Focused (Kvantum naming) -->
+  <g id="itemview-focused">
+    <rect fill="#2a3832" x="0" y="0" width="112" height="24" rx="2"/>
+    <rect fill="none" stroke="#a68a7b" stroke-width="1" x="0" y="0" width="112" height="24" rx="2"/>
+  </g>
+
+  <!-- Item View Focus -->
+  <g id="itemview-focus">
+    <rect fill="transparent" x="0" y="0" width="112" height="24" rx="2"/>
+  </g>
+
+  <!-- Item View Toggled - softer forest with cedar accent -->
+  <g id="itemview-toggled">
+    <rect fill="#354840" x="0" y="0" width="112" height="24" rx="2"/>
+    <rect fill="none" stroke="#a68a7b" stroke-width="1" x="0" y="0" width="112" height="24" rx="2"/>
+  </g>
+
+  <!-- Item View Pressed -->
+  <g id="itemview-pressed">
+    <rect fill="#354840" x="0" y="0" width="112" height="24" rx="2"/>
+    <rect fill="none" stroke="#8b6350" stroke-width="1" x="0" y="0" width="112" height="24" rx="2"/>
+  </g>
+
+  <!-- Focus Indicator Normal - subtle for tabs -->
+  <g id="focus-normal">
+    <rect fill="transparent" x="0" y="0" width="100" height="32" rx="4"/>
+  </g>
+
+  <!-- Focus Indicator Focused -->
+  <g id="focus-focused">
+    <rect fill="none" stroke="#354840" stroke-width="1" x="0" y="0" width="100" height="32" rx="4"/>
+  </g>
+
+  <!-- Focus Indicator Pressed -->
+  <g id="focus-pressed">
+    <rect fill="none" stroke="#354840" stroke-width="1" x="0" y="0" width="100" height="32" rx="4"/>
+  </g>
+
+  <!-- Focus Indicator Toggled -->
+  <g id="focus-toggled">
+    <rect fill="transparent" x="0" y="0" width="100" height="32" rx="4"/>
+  </g>
+
+  <!-- Focus - default element -->
   <g id="focus">
-    <rect fill="none" stroke="#d4977d" stroke-width="2" stroke-dasharray="2,2" x="0" y="710" width="100" height="32" rx="4"/>
+    <rect fill="transparent" x="0" y="0" width="100" height="32" rx="4"/>
+  </g>
+
+  <!-- Focus Ring for various widgets -->
+  <g id="focus-ring">
+    <rect fill="none" stroke="#354840" stroke-width="1" x="0" y="0" width="100" height="32" rx="4"/>
   </g>
 
   <!-- Header Section -->
   <g id="header">
-    <rect class="storm-blue" x="0" y="750" width="100" height="32"/>
-    <rect fill="none" stroke="#2b3339" stroke-width="1" x="0" y="750" width="100" height="32"/>
+    <rect class="stone-dark" x="0" y="750" width="100" height="32"/>
+    <rect fill="none" stroke="#18191a" stroke-width="1" x="0" y="750" width="100" height="32"/>
+  </g>
+
+  <!-- Combo Box -->
+  <g id="combo">
+    <rect class="stone-mid" x="0" y="0" width="100" height="32" rx="4"/>
+    <rect class="border-mist" x="0" y="0" width="100" height="32" rx="4"/>
+  </g>
+
+  <!-- Combo Box Focus -->
+  <g id="combo-focus">
+    <rect class="stone-mid" x="0" y="0" width="100" height="32" rx="4"/>
+    <rect fill="none" stroke="#7a5544" stroke-width="1" x="0" y="0" width="100" height="32" rx="4"/>
+  </g>
+
+  <!-- Menu Bar -->
+  <g id="menubar">
+    <rect class="stone-dark" x="0" y="0" width="200" height="28"/>
+  </g>
+
+  <!-- Menu Bar Item -->
+  <g id="menubaritem">
+    <rect fill="transparent" x="0" y="0" width="60" height="28" rx="4"/>
+  </g>
+
+  <!-- Menu Bar Item Hover (legacy name) -->
+  <g id="menubaritem-hover">
+    <rect fill="#2a3832" x="0" y="0" width="60" height="28" rx="4"/>
+    <rect fill="none" stroke="#354840" stroke-width="1" x="0" y="0" width="60" height="28" rx="4"/>
+  </g>
+
+  <!-- Menu Bar Item Focused - Kvantum uses this for hover -->
+  <g id="menubaritem-focused">
+    <rect fill="#2a3832" x="0" y="0" width="60" height="28" rx="4"/>
+    <rect fill="none" stroke="#354840" stroke-width="1" x="0" y="0" width="60" height="28" rx="4"/>
+  </g>
+
+  <!-- Menu Bar Item Pressed -->
+  <g id="menubaritem-pressed">
+    <rect fill="#354840" x="0" y="0" width="60" height="28" rx="4"/>
+    <rect fill="none" stroke="#3d4f46" stroke-width="1" x="0" y="0" width="60" height="28" rx="4"/>
+  </g>
+
+  <!-- Menu Bar Item Focus (keyboard focus) -->
+  <g id="menubaritem-focus">
+    <rect fill="#2a3832" x="0" y="0" width="60" height="28" rx="4"/>
+    <rect fill="none" stroke="#354840" stroke-width="1" x="0" y="0" width="60" height="28" rx="4"/>
+  </g>
+
+  <!-- Menu Bar Item Toggled -->
+  <g id="menubaritem-toggled">
+    <rect fill="#354840" x="0" y="0" width="60" height="28" rx="4"/>
+    <rect fill="none" stroke="#3d4f46" stroke-width="1" x="0" y="0" width="60" height="28" rx="4"/>
+  </g>
+
+  <!-- Menu Bar Item Toggled Focused -->
+  <g id="menubaritem-toggled-focused">
+    <rect fill="#3d4f46" x="0" y="0" width="60" height="28" rx="4"/>
+    <rect fill="none" stroke="#4a5f5a" stroke-width="1" x="0" y="0" width="60" height="28" rx="4"/>
+  </g>
+
+  <!-- Group Box Frame -->
+  <g id="group">
+    <rect fill="none" stroke="#3a3d40" stroke-width="1" x="0" y="0" width="100" height="60" rx="4"/>
+  </g>
+
+  <!-- Tab Frame -->
+  <g id="tabframe">
+    <rect class="stone-dark" x="0" y="0" width="100" height="60" rx="4"/>
+    <rect fill="none" stroke="#26282b" stroke-width="1" x="0" y="0" width="100" height="60" rx="4"/>
+  </g>
+
+  <!-- Common Frame -->
+  <g id="common">
+    <rect fill="none" stroke="#3a3d40" stroke-width="1" x="0" y="0" width="100" height="32" rx="4"/>
+  </g>
+
+  <!-- Window Background -->
+  <g id="window">
+    <rect class="stone-dark" x="0" y="0" width="100" height="100"/>
+  </g>
+
+  <!-- Switch/Toggle Off - stone base -->
+  <g id="switch">
+    <rect x="0" y="0" width="48" height="24" rx="12" ry="12"
+          fill="#26282b" stroke="#3a3d40" stroke-width="1"/>
+    <circle cx="12" cy="12" r="8"
+            fill="#4d5154" stroke="#3a3d40" stroke-width="1"/>
+  </g>
+
+  <!-- Switch/Toggle Off Hover -->
+  <g id="switch-hover">
+    <rect x="0" y="0" width="48" height="24" rx="12" ry="12"
+          fill="#2e3134" stroke="#5f6467" stroke-width="1"/>
+    <circle cx="12" cy="12" r="8"
+            fill="#5f6467" stroke="#70767a" stroke-width="1"/>
+  </g>
+
+  <!-- Switch/Toggle Off Pressed -->
+  <g id="switch-pressed">
+    <rect x="0" y="0" width="48" height="24" rx="12" ry="12"
+          fill="#26282b" stroke="#7a5544" stroke-width="1"/>
+    <circle cx="12" cy="12" r="8"
+            fill="#5f6467" stroke="#7a5544" stroke-width="1"/>
+  </g>
+
+  <!-- Switch/Toggle On - forest with sunset accent -->
+  <g id="switch-toggled">
+    <rect x="0" y="0" width="48" height="24" rx="12" ry="12"
+          fill="#354840" stroke="#7a5544" stroke-width="1"/>
+    <circle cx="36" cy="12" r="8"
+            fill="#8b6350" stroke="#7a5544" stroke-width="1"/>
+  </g>
+
+  <!-- Switch/Toggle On Hover -->
+  <g id="switch-toggled-hover">
+    <rect x="0" y="0" width="48" height="24" rx="12" ry="12"
+          fill="#3d4f46" stroke="#8b6350" stroke-width="1"/>
+    <circle cx="36" cy="12" r="8"
+            fill="#8b6350" stroke="#c9cbcc" stroke-width="1"/>
+  </g>
+
+  <!-- Switch/Toggle On Pressed -->
+  <g id="switch-toggled-pressed">
+    <rect x="0" y="0" width="48" height="24" rx="12" ry="12"
+          fill="#354840" stroke="#8b6350" stroke-width="1"/>
+    <circle cx="36" cy="12" r="8"
+            fill="#7a5544" stroke="#8b6350" stroke-width="1"/>
+  </g>
+
+  <!-- Switch Disabled Off -->
+  <g id="switch-disabled">
+    <rect x="0" y="0" width="48" height="24" rx="12" ry="12"
+          fill="#1e2022" stroke="#26282b" stroke-width="1" opacity="0.5"/>
+    <circle cx="12" cy="12" r="8"
+            fill="#3a3d40" stroke="#26282b" stroke-width="1" opacity="0.5"/>
+  </g>
+
+  <!-- Switch Disabled On -->
+  <g id="switch-toggled-disabled">
+    <rect x="0" y="0" width="48" height="24" rx="12" ry="12"
+          fill="#2a3832" stroke="#354840" stroke-width="1" opacity="0.5"/>
+    <circle cx="36" cy="12" r="8"
+            fill="#5c4035" stroke="#354840" stroke-width="1" opacity="0.5"/>
+  </g>
+
+  <!-- Spinbox Up/Down buttons -->
+  <g id="spin">
+    <rect class="stone-mid" x="0" y="0" width="16" height="16" rx="2"/>
+  </g>
+
+  <g id="spin-hover">
+    <rect class="mist-dark" x="0" y="0" width="16" height="16" rx="2"/>
+  </g>
+
+  <g id="spin-pressed">
+    <rect class="forest-deep" x="0" y="0" width="16" height="16" rx="2"/>
+  </g>
+
+  <!-- Resize Grip -->
+  <g id="resize-grip">
+    <circle class="mist-mid" cx="4" cy="4" r="2"/>
+    <circle class="mist-mid" cx="10" cy="4" r="2"/>
+    <circle class="mist-mid" cx="4" cy="10" r="2"/>
+    <circle class="mist-mid" cx="10" cy="10" r="2"/>
+  </g>
+
+  <!-- Splitter Handle -->
+  <g id="splitter">
+    <rect class="stone-mid" x="0" y="0" width="6" height="32"/>
+  </g>
+
+  <g id="splitter-hover">
+    <rect class="mist-dark" x="0" y="0" width="6" height="32"/>
   </g>
 </svg>

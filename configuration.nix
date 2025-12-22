@@ -117,6 +117,14 @@ in
     EndSection
   '';
 
+  services.xserver.serverFlagsSection = ''
+    Option "BlankTime" "0"
+    Option "StandbyTime" "0"
+    Option "SuspendTime" "0"
+    Option "OffTime" "0"
+  '';
+
+
   # Exclude Cinnamon default apps
   environment.cinnamon.excludePackages = with pkgs; [
     celluloid
@@ -143,10 +151,10 @@ in
     package = config.boot.kernelPackages.nvidiaPackages.production;
 
     prime = {
-      offload.enable = true;
-      offload.enableOffloadCmd = true;
+      offload.enable = false;
+      offload.enableOffloadCmd = false;
 
-      reverseSync.enable = false;
+      reverseSync.enable = true;
       sync.enable = false;
       amdgpuBusId = "PCI:6:0:0";
       nvidiaBusId = "PCI:1:0:0";
@@ -164,7 +172,6 @@ in
 
   # Environment session variables
   environment.sessionVariables = {
-    QT_QPA_PLATFORMTHEME = "qt5ct";
     QT_STYLE_OVERRIDE = "kvantum";
     # NVIDIA compositor fixes
     __GL_YIELD = "USLEEP";

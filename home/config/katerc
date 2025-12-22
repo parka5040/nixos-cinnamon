@@ -40,9 +40,6 @@ Tab Middle Click Close Document=true
 Tabbar Alignment=0
 Tabbar Tab Limit=0
 
-[KDE]
-widgetStyle=Fusion
-
 [KTextEditor Document]
 Allow End of Line Detection=true
 Auto Detect Indent=true

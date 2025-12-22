@@ -36,7 +36,7 @@ in
   # Qt theming - use Kvantum
   qt = {
     enable = true;
-    platformTheme.name = "qtct";
+    platformTheme.name = "kvantum";
     style.name = "kvantum";
   };
 
@@ -60,6 +60,13 @@ in
       clock-show-seconds = true;
       cursor-size = cursorSize;
       font-name = "CaskaydiaCove Nerd Font 10";
+    };
+    "org/cinnamon/desktop/session" = {
+      idle-delay = lib.hm.gvariant.mkUint32 0;  # Never blank
+    };
+    "org/cinnamon/settings-daemon/plugins/power" = {
+      sleep-display-ac = 0;  # Never sleep display on AC
+      idle-dim-time = 0;
     };
 
     # Mouse & touchpad
@@ -105,6 +112,7 @@ in
     };
     "org/cinnamon/desktop/screensaver" = {
       lock-enabled = true;
+      idle-activation-enabled = true;
       picture-uri = "file://${config.home.homeDirectory}/Pictures/Wallpapers/rainy_city.jpg";
       picture-options = "zoom";
     };
@@ -345,7 +353,7 @@ in
       nix-code = "code /etc/nixos";
       nix-purge = "sudo nix-collect-garbage --delete-old";
       nix-listenv = "sudo nix-env --list-generations --profile /nix/var/nix/profiles/system";
-      nix-edit = "kate /etc/nixos/configuration.nix";
+      nix-edit = "kate /etc/nixos/";
       nvidia-run = "nvidia-offload";
       nix-file = "nemo /etc/nixos &";
       nix-gc = "sudo nix-store --gc";
@@ -494,8 +502,11 @@ in
     };
     configFile = {
       # Kvantum theming - link to system theme
-      "Kvantum/PNW_cinnamon_theme".source = "${pnw-cinnamon-theme}/share/themes/PNW_cinnamon_theme/Kvantum/PNW-Cinnamon";
+      "Kvantum/PNW-Cinnamon".source = "${pnw-cinnamon-theme}/share/themes/PNW_cinnamon_theme/Kvantum/PNW-Cinnamon";
       "Kvantum/kvantum.kvconfig".source = ./config/kvantum.kvconfig;
+
+      # KDE globals for KDE6 apps (Kate, etc.)
+      "kdeglobals".source = ./config/kde/kdeglobals;
 
       # Kate
       "katerc".source = ./config/katerc;

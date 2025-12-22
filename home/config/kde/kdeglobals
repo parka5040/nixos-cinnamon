@@ -1,0 +1,11 @@
+[General]
+ColorScheme=PNW-Cinnamon
+Name=PNW Cinnamon
+widgetStyle=kvantum
+
+[Icons]
+Theme=Gruvbox-Plus-Dark
+
+[KDE]
+LookAndFeelPackage=
+widgetStyle=kvantum
