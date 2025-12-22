@@ -5,33 +5,33 @@
     --pnw-stone-deep: #18191a;
     --pnw-stone-dark: #1e2022;
     --pnw-stone-mid: #26282b;
-    --pnw-stone-light: #2e3134;
+    --pnw-stone-light: #3a3d40;
 
     /* Mist & Fog — Atmospheric tones */
     --pnw-mist-dark: #3a3d40;
     --pnw-mist-mid: #4d5154;
-    --pnw-mist-light: #5f6467;
-    --pnw-fog: #70767a;
+    --pnw-mist-light: #6b7073;
+    --pnw-fog: #6b7073;
 
     /* Deep Forest — Accent & secondary */
-    --pnw-forest-deep: #1f2a25;
+    --pnw-forest-deep: #2a3832;
     --pnw-forest-mid: #2a3832;
     --pnw-forest-accent: #354840;
-    --pnw-moss: #3d4f46;
+    --pnw-moss: #354840;
 
     /* Fading Light — Text colors */
     --pnw-text-primary: #c9cbcc;
-    --pnw-text-secondary: #969a9c;
+    --pnw-text-secondary: #c9cbcc;
     --pnw-text-muted: #6b7073;
 
     /* Sunset Glow — Very subtle warm accents */
-    --pnw-sunset-deep: #5c4035;
-    --pnw-sunset-glow: #6d4d3d;
-    --pnw-sunset-ember: #7a5544;
-    --pnw-sunset-soft: #8b6350;
+    --pnw-sunset-deep: #a68a7b;
+    --pnw-sunset-glow: #a68a7b;
+    --pnw-sunset-ember: #a68a7b;
+    --pnw-sunset-soft: #d4977d;
 
     /* Twilight Sky — Cool accent */
-    --pnw-twilight: #2d3540;
+    --pnw-twilight: #26282b;
 
     /* Functional */
     --pnw-shadow: rgba(0, 0, 0, 0.55);
@@ -601,7 +601,7 @@ notification-message {
 :root[privatebrowsingmode="temporary"] #TabsToolbar {
     background: linear-gradient(
         180deg,
-        #121314 0%,
+        #18191a 0%,
         #18191a 100%
     ) !important;
 }
@@ -610,7 +610,7 @@ notification-message {
     background: linear-gradient(
         180deg,
         var(--pnw-twilight) 0%,
-                                #1a1c1e 100%
+                                #18191a 100%
     ) !important;
 }
 

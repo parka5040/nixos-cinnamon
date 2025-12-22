@@ -138,6 +138,7 @@ in
     warpinator
     bulky
     pix
+    file-roller
   ];
 
   # NVIDIA Configuration
@@ -331,6 +332,7 @@ in
     qalculate-gtk
 
     # Utilities
+    mate.engrampa
     rsync
     autorandr
     blueberry

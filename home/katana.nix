@@ -128,6 +128,11 @@ in
       font = "CaskaydiaCove Nerd Font 10";
     };
     "org/gnome/desktop/interface" = {
+      gtk-theme = "PNW_cinnamon_theme";
+      icon-theme = "Gruvbox-Plus-Dark";
+      cursor-theme = "Nordzy-cursors";
+      cursor-size = cursorSize;
+      font-name = "CaskaydiaCove Nerd Font 10";
       document-font-name = "CaskaydiaCove Nerd Font 10";
       monospace-font-name = "CaskaydiaCove Nerd Font Mono 10";
     };
@@ -197,11 +202,11 @@ in
       "application/x-mobipocket-ebook" = ["calibre-ebook-viewer.desktop"];
 
       # Archives
-      "application/zip" = ["org.gnome.FileRoller.desktop"];
-      "application/x-tar" = ["org.gnome.FileRoller.desktop"];
-      "application/gzip" = ["org.gnome.FileRoller.desktop"];
-      "application/x-7z-compressed" = ["org.gnome.FileRoller.desktop"];
-      "application/x-rar" = ["org.gnome.FileRoller.desktop"];
+      "application/zip" = ["engrampa.desktop"];
+      "application/x-tar" = ["engrampa.desktop"];
+      "application/gzip" = ["engrampa.desktop"];
+      "application/x-7z-compressed" = ["engrampa.desktop"];
+      "application/x-rar" = ["engrampa.desktop"];
 
       # File manager
       "inode/directory" = ["nemo.desktop"];
