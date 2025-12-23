@@ -353,6 +353,7 @@ in
     shellAliases = {
       ll = "ls -la";
       nix-rebuild = "sudo nixos-rebuild switch";
+      nix-update = "sudo nixos-rebuild switch --upgrade";
       nix-reboot = "sudo nixos-rebuild boot";
       nix-cleanup = "sudo nix-collect-garbage --delete-older-than 7d";
       nix-code = "code /etc/nixos";
