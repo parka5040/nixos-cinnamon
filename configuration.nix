@@ -144,7 +144,7 @@ in
   # NVIDIA Configuration
   hardware.nvidia = {
     modesetting.enable = true;
-    powerManagement.enable = false;
+    powerManagement.enable = true;
     powerManagement.finegrained = false;
     open = false;
     nvidiaSettings = true;
@@ -157,7 +157,7 @@ in
 
       reverseSync.enable = true;
       sync.enable = false;
-      amdgpuBusId = "PCI:6:0:0";
+      amdgpuBusId = "PCI:5:0:0";
       nvidiaBusId = "PCI:1:0:0";
     };
   };

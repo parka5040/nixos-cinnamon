@@ -363,6 +363,7 @@ in
       nix-file = "nemo /etc/nixos &";
       nix-gc = "sudo nix-store --gc";
       nix-cd = "cd /etc/nixos";
+      screen-nudge = "xrandr --output HDMI-0 --off && xrandr --output HDMI-0 --auto";
     };
     initContent = lib.mkMerge [
       (lib.mkBefore ''
